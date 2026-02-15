@@ -5,3 +5,5 @@ python-multipart
 requests
 pandas
 scikit-learn
+geopy
+python-multipart
