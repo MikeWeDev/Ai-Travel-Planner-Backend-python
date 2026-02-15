@@ -1,7 +1,11 @@
+import os
+import uvicorn
+from dotenv import load_dotenv
 from fastapi import FastAPI
 from typing import List
-from app.models import TripRequest, TripResponse, Place
 from pydantic import BaseModel
+from app.models import TripRequest, TripResponse, Place
+
 # Importing all 3 core engine components
 from app.services.data import (
     load_places, 
@@ -10,20 +14,24 @@ from app.services.data import (
     optimize_route
 )
 
+# Load environment variables from .env file
+load_dotenv()
+
 app = FastAPI()
+
 class TripRequest(BaseModel):
     city: str
     country: str
-    interests: List[str] # Or just list
+    interests: List[str] 
     budget: float
-    duration: int # Make sure this isn't str
+    duration: int 
 
 # ---------------------------
 # ROOT (Health Check)
 # ---------------------------
 @app.get("/")
 def root():
-    return {"status": "Backend Engine is running", "stage": "Day 5 Complete"}
+    return {"status": "Backend Engine is running"}
 
 # ---------------------------
 # GENERATE TRIP (Day 4 & 5 Logic)
@@ -60,10 +68,9 @@ def generate_trip(req: TripRequest):
         }
 
     # Step 3: Route Optimization - Nearest Neighbor/TSP (Day 5)
-    # This re-orders the budget-friendly places for the shortest path
     optimized_itinerary = optimize_route(final_selection_list)
 
-    # Return the full "Smart" response
+    # Return the full "Smart" response back to the Node.js caller
     return {
         "city": req.city,
         "country": req.country,
@@ -71,7 +78,6 @@ def generate_trip(req: TripRequest):
         "itinerary_count": len(optimized_itinerary),
         "itinerary": optimized_itinerary
     }
-
 
 # ---------------------------
 # DEBUG — get all places
@@ -86,3 +92,15 @@ def get_all_places():
     places = [Place(**p) if isinstance(p, dict) else p for p in raw_places]
     print(f"📍 Debug: Loaded {len(places)} places from CSV")
     return places
+
+# ---------------------------
+# SERVER RUNNER
+# ---------------------------
+if __name__ == "__main__":
+    # Get configuration from .env or use defaults
+    # Use 'PORT' as it is the standard name for deployment platforms like Render/Heroku
+    server_port = int(os.getenv("PORT", 8000))
+    server_host = os.getenv("HOST", "0.0.0.0")
+    
+    print(f"🚀 Python Engine starting on {server_host}:{server_port}")
+    uvicorn.run(app, host=server_host, port=server_port)
