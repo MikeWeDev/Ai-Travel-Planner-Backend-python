@@ -1,0 +1,40 @@
+name,category,latitude,longitude,entry_fee,city,country,description
+National Museum,history,9.033,38.742,200,Addis Ababa,Ethiopia,Explore ancient artifacts and the fossil of Lucy.
+Unity Park,culture,9.019,38.751,300,Addis Ababa,Ethiopia,Beautiful palace grounds with a zoo and historical exhibits.
+Entoto Park,nature,9.110,38.730,100,Addis Ababa,Ethiopia,Amazing forest views and hiking trails on the mountain.
+Addis Merkato,shopping,9.024,38.746,0,Addis Ababa,Ethiopia,The largest open-air market in Africa.
+Haile Resort Beach,relaxation,7.050,38.470,150,Hawassa,Ethiopia,Beautiful lakeside relaxation and boat trips.
+Fish Market,food,7.060,38.480,50,Hawassa,Ethiopia,Experience local culture and fresh lake tilapia.
+Blue Nile Falls,nature,11.480,37.580,250,Bahir Dar,Ethiopia,The spectacular "Smoking Water" waterfall.
+Lake Tana Monasteries,history,11.600,37.380,300,Bahir Dar,Ethiopia,Ancient island monasteries with stunning murals.
+Nechisar National Park,nature,5.980,37.550,400,Arba Minch,Ethiopia,Home to the "Crocodile Market" and diverse wildlife.
+Forty Springs,nature,6.010,37.530,100,Arba Minch,Ethiopia,Natural forest springs that give the city its name.
+Atse Yohannes Palace,history,13.490,39.470,150,Mekelle,Ethiopia,Historical museum of the Ethiopian Emperor.
+Martyrs Memorial,culture,13.480,39.480,0,Mekelle,Ethiopia,A significant monument with beautiful city views.
+Nairobi National Park,wildlife,1.360,36.830,500,Nairobi,Kenya,Wildlife safari within sight of the city skyline.
+David Sheldrick Elephant Orphanage,nature,1.370,36.770,350,Nairobi,Kenya,Rescue center for orphaned baby elephants.
+Fort Jesus,history,4.060,39.670,300,Mombasa,Kenya,Historic Portuguese fort overlooking the ocean.
+Diani Beach,relaxation,4.270,39.590,0,Mombasa,Kenya,Pristine white sands and turquoise waters.
+Impalas Sanctuary,nature,0.110,34.750,200,Kisumu,Kenya,Lakefront wildlife sanctuary with impalas and zebras.
+Dunga Hill Camp,relaxation,0.130,34.730,100,Kisumu,Kenya,Best spot for sunsets over Lake Victoria.
+Lake Nakuru Park,nature,0.360,36.080,600,Nakuru,Kenya,Famous for its flamingos and rhino sanctuary.
+Hyrax Hill Museum,history,0.280,36.100,150,Nakuru,Kenya,Prehistoric archaeological site and museum.
+Koru Prehistoric Site,history,0.180,35.260,100,Eldoret,Kenya,Fossil-rich site with early Miocene discoveries.
+Tower of London,history,51.500,-0.070,450,London,United Kingdom,Historic castle and home of the Crown Jewels.
+British Museum,culture,51.510,-0.120,0,London,United Kingdom,Massive collection of world art and artifacts.
+Edinburgh Castle,history,55.940,-3.190,400,Edinburgh,United Kingdom,Fortress dominating the skyline of the capital.
+Royal Mile,culture,55.950,-3.180,0,Edinburgh,United Kingdom,The historic heart of the Old Town.
+Old Trafford Museum,sport,53.460,-2.290,350,Manchester,United Kingdom,Home of Manchester United Football Club.
+Science and Industry Museum,culture,53.470,-2.250,0,Manchester,United Kingdom,Celebrating the city's industrial heritage.
+Bullring Centre,shopping,52.470,-1.890,0,Birmingham,United Kingdom,One of the UK's largest shopping destinations.
+Eiffel Tower,history,48.850,2.290,500,Paris,France,The global cultural icon of France.
+Louvre Museum,culture,48.860,2.330,450,Paris,France,World's largest art museum and home of Mona Lisa.
+Vieux Port,culture,43.290,5.370,0,Marseille,France,The historic Old Port of Marseille.
+Basilique Notre-Dame,history,43.280,5.370,0,Marseille,France,Iconic hilltop church with gold-leaf interior.
+Place Bellecour,culture,45.750,4.830,0,Lyon,France,One of the largest open squares in Europe.
+Senso-ji Temple,history,35.710,139.790,0,Tokyo,Japan,Tokyo's oldest and most significant temple.
+Shibuya Crossing,culture,35.650,139.700,0,Tokyo,Japan,The world's busiest pedestrian intersection.
+Kinkaku-ji,history,35.030,135.720,300,Kyoto,Japan,The famous "Golden Pavilion" Zen temple.
+Arashiyama Bamboo Grove,nature,35.010,135.670,0,Kyoto,Japan,Stunning paths through towering bamboo stalks.
+Osaka Castle,history,34.680,135.520,350,Osaka,Japan,Grand castle museum surrounded by a massive park.
+Dotonbori,food,34.660,135.500,0,Osaka,Japan,Vibrant neon-lit street famous for street food.
