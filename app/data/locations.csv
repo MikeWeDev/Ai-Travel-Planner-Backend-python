@@ -1,40 +1,502 @@
 name,category,latitude,longitude,entry_fee,city,country,description
-National Museum,history,9.033,38.742,200,Addis Ababa,Ethiopia,Explore ancient artifacts and the fossil of Lucy.
-Unity Park,culture,9.019,38.751,300,Addis Ababa,Ethiopia,Beautiful palace grounds with a zoo and historical exhibits.
-Entoto Park,nature,9.110,38.730,100,Addis Ababa,Ethiopia,Amazing forest views and hiking trails on the mountain.
-Addis Merkato,shopping,9.024,38.746,0,Addis Ababa,Ethiopia,The largest open-air market in Africa.
-Haile Resort Beach,relaxation,7.050,38.470,150,Hawassa,Ethiopia,Beautiful lakeside relaxation and boat trips.
-Fish Market,food,7.060,38.480,50,Hawassa,Ethiopia,Experience local culture and fresh lake tilapia.
-Blue Nile Falls,nature,11.480,37.580,250,Bahir Dar,Ethiopia,The spectacular "Smoking Water" waterfall.
-Lake Tana Monasteries,history,11.600,37.380,300,Bahir Dar,Ethiopia,Ancient island monasteries with stunning murals.
-Nechisar National Park,nature,5.980,37.550,400,Arba Minch,Ethiopia,Home to the "Crocodile Market" and diverse wildlife.
-Forty Springs,nature,6.010,37.530,100,Arba Minch,Ethiopia,Natural forest springs that give the city its name.
-Atse Yohannes Palace,history,13.490,39.470,150,Mekelle,Ethiopia,Historical museum of the Ethiopian Emperor.
-Martyrs Memorial,culture,13.480,39.480,0,Mekelle,Ethiopia,A significant monument with beautiful city views.
-Nairobi National Park,wildlife,1.360,36.830,500,Nairobi,Kenya,Wildlife safari within sight of the city skyline.
-David Sheldrick Elephant Orphanage,nature,1.370,36.770,350,Nairobi,Kenya,Rescue center for orphaned baby elephants.
-Fort Jesus,history,4.060,39.670,300,Mombasa,Kenya,Historic Portuguese fort overlooking the ocean.
-Diani Beach,relaxation,4.270,39.590,0,Mombasa,Kenya,Pristine white sands and turquoise waters.
-Impalas Sanctuary,nature,0.110,34.750,200,Kisumu,Kenya,Lakefront wildlife sanctuary with impalas and zebras.
-Dunga Hill Camp,relaxation,0.130,34.730,100,Kisumu,Kenya,Best spot for sunsets over Lake Victoria.
-Lake Nakuru Park,nature,0.360,36.080,600,Nakuru,Kenya,Famous for its flamingos and rhino sanctuary.
-Hyrax Hill Museum,history,0.280,36.100,150,Nakuru,Kenya,Prehistoric archaeological site and museum.
-Koru Prehistoric Site,history,0.180,35.260,100,Eldoret,Kenya,Fossil-rich site with early Miocene discoveries.
-Tower of London,history,51.500,-0.070,450,London,United Kingdom,Historic castle and home of the Crown Jewels.
-British Museum,culture,51.510,-0.120,0,London,United Kingdom,Massive collection of world art and artifacts.
-Edinburgh Castle,history,55.940,-3.190,400,Edinburgh,United Kingdom,Fortress dominating the skyline of the capital.
-Royal Mile,culture,55.950,-3.180,0,Edinburgh,United Kingdom,The historic heart of the Old Town.
-Old Trafford Museum,sport,53.460,-2.290,350,Manchester,United Kingdom,Home of Manchester United Football Club.
-Science and Industry Museum,culture,53.470,-2.250,0,Manchester,United Kingdom,Celebrating the city's industrial heritage.
-Bullring Centre,shopping,52.470,-1.890,0,Birmingham,United Kingdom,One of the UK's largest shopping destinations.
-Eiffel Tower,history,48.850,2.290,500,Paris,France,The global cultural icon of France.
-Louvre Museum,culture,48.860,2.330,450,Paris,France,World's largest art museum and home of Mona Lisa.
-Vieux Port,culture,43.290,5.370,0,Marseille,France,The historic Old Port of Marseille.
-Basilique Notre-Dame,history,43.280,5.370,0,Marseille,France,Iconic hilltop church with gold-leaf interior.
-Place Bellecour,culture,45.750,4.830,0,Lyon,France,One of the largest open squares in Europe.
-Senso-ji Temple,history,35.710,139.790,0,Tokyo,Japan,Tokyo's oldest and most significant temple.
-Shibuya Crossing,culture,35.650,139.700,0,Tokyo,Japan,The world's busiest pedestrian intersection.
-Kinkaku-ji,history,35.030,135.720,300,Kyoto,Japan,The famous "Golden Pavilion" Zen temple.
-Arashiyama Bamboo Grove,nature,35.010,135.670,0,Kyoto,Japan,Stunning paths through towering bamboo stalks.
-Osaka Castle,history,34.680,135.520,350,Osaka,Japan,Grand castle museum surrounded by a massive park.
-Dotonbori,food,34.660,135.500,0,Osaka,Japan,Vibrant neon-lit street famous for street food.
+National Archives and Library,history,9.0195,38.7495,20,Addis Ababa,Ethiopia,Central repository for historical Ethiopian manuscripts and books.
+Lion Zoo,nature,9.0345,38.7525,50,Addis Ababa,Ethiopia,Home to the unique black-maned Abyssinian lions.
+Derba Falls,nature,9.4120,38.6520,100,Addis Ababa,Ethiopia,A stunning waterfall and canyon located just north of the city.
+Jan Medha,culture,9.0390,38.7690,0,Addis Ababa,Ethiopia,Large open field used for the Timkat festival and horse racing.
+Yared School of Music,art,9.0430,38.7580,0,Addis Ababa,Ethiopia,A hub for traditional and modern Ethiopian musical education.
+Lake Hawassa Waterfront,nature,7.0580,38.4650,0,Hawassa,Ethiopia,A scenic lakeside area perfect for watching hippos and birds.
+Fish Market (Amora Gedel),food,7.0620,38.4680,50,Hawassa,Ethiopia,Lively lakeside market known for fresh tilapia and fish soup.
+Tabor Mountain,nature,7.0450,38.4950,50,Hawassa,Ethiopia,A steep hill offering panoramic views of the city and the lake.
+St. Gabriel Church,culture,7.0510,38.4820,0,Hawassa,Ethiopia,One of the largest and most iconic Orthodox churches in the city.
+Hawassa Industrial Park,science,7.0850,38.4520,0,Hawassa,Ethiopia,A flagship eco-industrial park focused on textile manufacturing.
+Lewi Resort Park,relaxation,7.0650,38.4620,150,Hawassa,Ethiopia,A lush recreational area with mini-golf and lake access.
+Tikur Wuha Park,nature,7.0920,38.4250,100,Hawassa,Ethiopia,A serene riverine park known for its biodiversity and monkeys.
+Gudumale Recreation Center,culture,7.0550,38.4690,100,Hawassa,Ethiopia,A cultural site used for the Sidama people's Fichee-Chambalaalla.
+Hawassa University Botanical Garden,nature,7.0520,38.5020,50,Hawassa,Ethiopia,Educational garden featuring indigenous plants and flowers.
+South Star Plaza,shopping,7.0490,38.4750,0,Hawassa,Ethiopia,A modern commercial hub in the center of the city.
+United Pentecostal Church,culture,7.0420,38.4880,0,Hawassa,Ethiopia,Architecturally significant modern church in the suburbs.
+Wassa Hotel Viewpoint,relaxation,7.0610,38.4630,0,Hawassa,Ethiopia,Public terrace area known for the best sunsets over the lake.
+Millennium Park,nature,7.0570,38.4780,30,Hawassa,Ethiopia,Small urban park used by locals for relaxation and exercise.
+Haile Resort Grounds,relaxation,7.0720,38.4550,200,Hawassa,Ethiopia,Luxury grounds featuring spas and high-end dining by the water.
+Aregash Lodge Trail,nature,6.8500,38.4100,150,Hawassa,Ethiopia,Eco-trail nearby featuring bamboo forests and hyena spotting.
+Hawassa Public Library,culture,7.0480,38.4850,0,Hawassa,Ethiopia,A quiet center for learning and community events.
+Adare Cultural Village,culture,7.0680,38.4720,100,Hawassa,Ethiopia,Showcase of the traditional lifestyle of the Sidama people.
+Sidama Cultural Hall,art,7.0440,38.4810,0,Hawassa,Ethiopia,Venue for traditional dance, music, and local art displays.
+Yirgalem Coffee Plantation,food,6.7500,38.4200,200,Hawassa,Ethiopia,A short drive away to see how local organic coffee is grown.
+Loka Abaya National Park,nature,6.9500,38.1500,300,Hawassa,Ethiopia,Expansive park nearby featuring savanna wildlife and lake views.
+Blue Nile Falls (Tis Abay),nature,11.4850,37.5880,100,Bahir Dar,Ethiopia,The majestic 'Smoking Water' waterfall on the Blue Nile.
+Lake Tana,nature,12.0000,37.3000,0,Bahir Dar,Ethiopia,Ethiopia’s largest lake and the source of the Blue Nile.
+Ura Kidane Mehret,history,11.7010,37.3120,250,Bahir Dar,Ethiopia,Famous 14th-century monastery known for vibrant murals.
+Azwa Maryam,history,11.6980,37.3150,200,Bahir Dar,Ethiopia,A beautiful round church on the Zege Peninsula.
+Blue Nile Bridge,science,11.5950,37.4020,0,Bahir Dar,Ethiopia,A key infrastructure point offering views of the river's start.
+Bezawit Hill Palace,history,11.5810,37.4120,0,Bahir Dar,Ethiopia,Former palace of Haile Selassie with views of the Nile.
+Martyrs Memorial Monument,culture,11.5890,37.3850,0,Bahir Dar,Ethiopia,A large monument and museum dedicated to regional history.
+Church of St. George,culture,11.6020,37.3910,0,Bahir Dar,Ethiopia,Iconic stone church central to the city's religious life.
+Bahir Dar Market,shopping,11.5920,37.3950,0,Bahir Dar,Ethiopia,Bustling market known for woven traditional clothes and spices.
+Lake Tana Marine Transport,relaxation,11.6050,37.3820,500,Bahir Dar,Ethiopia,The main pier for boat trips to the lake's island monasteries.
+Debre Maryam Monastery,history,11.6150,37.4100,150,Bahir Dar,Ethiopia,A small monastery near the outlet of the Blue Nile.
+Kibran Gebriel,history,11.6450,37.3750,200,Bahir Dar,Ethiopia,An island monastery for men only, housing old manuscripts.
+Entos Eyesu,culture,11.6800,37.3500,150,Bahir Dar,Ethiopia,Island monastery with a small museum and peaceful gardens.
+Bahir Dar University Park,nature,11.5750,37.4050,0,Bahir Dar,Ethiopia,Lush green campus area popular for walks by the river.
+Zegie Peninsula,nature,11.6900,37.3200,0,Bahir Dar,Ethiopia,Densely forested area home to coffee farms and churches.
+St. Lawrence Church,culture,11.5980,37.3880,0,Bahir Dar,Ethiopia,Historical church with unique local architectural elements.
+Papyrus Workshop,art,11.6040,37.3840,0,Bahir Dar,Ethiopia,Area where locals build traditional 'Tanwa' reed boats.
+Nile View Terrace,relaxation,11.5970,37.4040,0,Bahir Dar,Ethiopia,Popular spot to watch hippos in the Blue Nile riverbed.
+Felege Hiwot Hospital Park,nature,11.5910,37.3890,0,Bahir Dar,Ethiopia,A quiet botanical area within the city’s hospital grounds.
+Tana Chirkos,history,12.1500,37.4500,300,Bahir Dar,Ethiopia,An ancient monastery on the eastern shore of Lake Tana.
+Nech Sar National Park,nature,5.9800,37.5500,200,Arba Minch,Ethiopia,Known as the 'Bridge of God' connecting Lake Abaya and Lake Chamo.
+Forty Springs,nature,6.0150,37.5650,50,Arba Minch,Ethiopia,The city's namesake; 40 natural springs bubbling up in a lush forest.
+Crocodile Market,nature,5.9250,37.5850,150,Arba Minch,Ethiopia,Shores of Lake Chamo where massive Nile crocodiles bask in the sun.
+Lake Chamo,nature,5.8333,37.4833,0,Arba Minch,Ethiopia,Rift Valley lake famous for hippos and large concentrations of crocodiles.
+Arba Minch Crocodile Ranch,science,6.0230,37.5550,100,Arba Minch,Ethiopia,A government-run conservation project and farm for Nile crocodiles.
+Dorze Village,culture,6.1950,37.5350,150,Arba Minch,Ethiopia,Highland village famous for elephant-shaped bamboo huts and weaving.
+Guge Mountain,nature,6.2100,37.5000,0,Arba Minch,Ethiopia,Trekking destination offering cool climates and views of the Rift Valley.
+Lake Abaya,nature,6.2333,37.8833,0,Arba Minch,Ethiopia,The second largest lake in Ethiopia known for its reddish-brown waters.
+Haile Resort Viewpoint,relaxation,6.0350,37.5610,0,Arba Minch,Ethiopia,Strategic hilltop spot for the best sunset views over the twin lakes.
+Paradise Lodge Walkway,relaxation,6.0120,37.5450,100,Arba Minch,Ethiopia,A scenic cliffside path offering a bird's-eye view of Nech Sar park.
+Arba Minch Forest,nature,6.0080,37.5620,30,Arba Minch,Ethiopia,Dense groundwater forest housing monkeys and endemic bird species.
+Omo Valley Gate,culture,6.0300,37.5500,0,Arba Minch,Ethiopia,The symbolic starting point for expeditions to the Southern Tribes.
+Arba Minch University,science,6.0600,37.5650,0,Arba Minch,Ethiopia,Renowned institution for water technology and engineering in East Africa.
+Chencha Market,shopping,6.2500,37.5830,0,Arba Minch,Ethiopia,Vibrant mountain market where Dorze textiles and false banana are sold.
+St. Mary's Church,culture,6.0280,37.5420,0,Arba Minch,Ethiopia,Prominent Orthodox church serving the local community.
+Sikela Market,shopping,6.0400,37.5550,0,Arba Minch,Ethiopia,The main commercial area in the lower part of the city.
+Abaya-Chamo Viewpoint,nature,6.0450,37.5480,0,Arba Minch,Ethiopia,A public stop on the road to Chencha with a panoramic landscape view.
+Shecha District,culture,6.0150,38.5600,0,Arba Minch,Ethiopia,The upper administrative district known for its hilly streets and cafes.
+Forty Springs Gate,nature,6.0110,37.5660,20,Arba Minch,Ethiopia,The official entrance leading to the groundwater springs.
+Kulfo River,nature,6.0420,37.5750,0,Arba Minch,Ethiopia,River crossing the city that feeds into the Nech Sar plains.
+Emperor Yohannes IV Palace,history,13.4967,39.4750,150,Mekelle,Ethiopia,Nineteenth-century palace of the Emperor now serving as a museum.
+Martyrs' Memorial Monument,history,13.4920,39.4620,100,Mekelle,Ethiopia,Large monument and museum dedicated to the Tigrayan struggle.
+Abraha Castle,history,13.4850,39.4850,150,Mekelle,Ethiopia,Historic hilltop castle built by Dejazmach Abraha in the early 1900s.
+Romanat Falls,nature,13.5500,39.4200,50,Mekelle,Ethiopia,Beautiful waterfall located a short drive north of the city center.
+Chom'a Hill,nature,13.4750,39.4550,0,Mekelle,Ethiopia,A hiking spot offering the most iconic aerial view of Mekelle city.
+Mekelle Market (Qedamay Woyane),shopping,13.4940,39.4710,0,Mekelle,Ethiopia,Large central market known for local spices and traditional crafts.
+Adi Haki Market,shopping,13.4950,39.4450,0,Mekelle,Ethiopia,A busy neighborhood market famous for fruits and textiles.
+Hawelti Stadium,culture,13.4910,39.4650,0,Mekelle,Ethiopia,The regional stadium hosting football matches and major public events.
+Mekelle University,science,13.4830,39.4880,0,Mekelle,Ethiopia,A major educational hub with beautiful architecture and green spaces.
+Atse Yohannes Hotel,culture,13.4960,39.4740,0,Mekelle,Ethiopia,One of the oldest hotels in the city reflecting classic Italian-Tigrayan style.
+St. Tekle Haymanot Church,culture,13.4980,39.4780,0,Mekelle,Ethiopia,Historic Orthodox church with significant local religious heritage.
+CheleAnqua Waterfall,nature,13.4400,39.5100,50,Mekelle,Ethiopia,A scenic nature spot popular for weekend picnics near the city.
+Mekelle Industrial Park,science,13.4500,39.5000,0,Mekelle,Ethiopia,Large-scale manufacturing hub for the textile and garment industry.
+Camel Caravan Point,culture,13.5050,39.4800,0,Mekelle,Ethiopia,Arrival point for traditional salt caravans from the Danakil Depression.
+Gereb Segen,nature,13.5200,39.5500,0,Mekelle,Ethiopia,A large reservoir area surrounded by dry highland hills.
+Italian Cemetery,history,13.4880,39.4900,0,Mekelle,Ethiopia,Historical site containing graves from the Italian occupation period.
+KHALID Mosque,culture,13.4930,39.4680,0,Mekelle,Ethiopia,One of the city's main mosques located in the heart of the district.
+Chom'a Meskel,culture,13.4720,39.4520,0,Mekelle,Ethiopia,The site of the annual Meskel bonfire celebration on the hilltop.
+Selassie Church,culture,13.4800,39.4820,0,Mekelle,Ethiopia,Beautiful stone-built church on the southern edge of the city.
+Mekelle Planetarium,science,13.4860,39.4640,100,Mekelle,Ethiopia,A modern science center for astronomy education located near the monument.
+
+
+---------------------------------------------------------------------------------------
+name,category,latitude,longitude,entry_fee,city,country,description
+"Nairobi National Park","nature",-1.3733,36.8589,5000,"Nairobi","Kenya","The world's only wildlife park within a capital city; home to lions and rhinos."
+"Giraffe Centre","nature",-1.3768,36.7444,1500,"Nairobi","Kenya","Conservation center for the endangered Rothschild giraffe where visitors can feed them."
+"David Sheldrick Wildlife Trust","nature",-1.3770,36.7730,1500,"Nairobi","Kenya","A famous elephant orphanage rescuing and rehabilitating orphaned baby elephants."
+"Karen Blixen Museum","history",-1.3591,36.7128,1200,"Nairobi","Kenya","The former home of the 'Out of Africa' author set in beautiful gardens."
+"Bomas of Kenya","culture",-1.3397,36.7708,1000,"Nairobi","Kenya","A tourist village displaying traditional villages and daily dances of Kenyan tribes."
+"Nairobi National Museum","culture",-1.2741,36.8143,1200,"Nairobi","Kenya","Showcases Kenya's rich heritage including history, nature, and contemporary art."
+"Karura Forest","nature",-1.2335,36.8242,600,"Nairobi","Kenya","One of the largest Gazetted forests in the world for hiking and cycling."
+"KICC Rooftop","relaxation",-1.2885,36.8232,500,"Nairobi","Kenya","Offers a 360-degree panoramic view of the Nairobi city skyline."
+"Nairobi Arboretum","nature",-1.2760,36.8050,65,"Nairobi","Kenya","A tranquil 30-hectare park with over 350 species of indigenous and exotic trees."
+"Kazuri Beads Factory","art",-1.3450,36.7150,0,"Nairobi","Kenya","Workshop where local women create hand-painted ceramic beads and pottery."
+"August 7th Memorial Park","history",-1.2858,36.8275,200,"Nairobi","Kenya","A peaceful garden built on the site of the former 1998 US Embassy bombing."
+"Nairobi Animal Orphanage","nature",-1.3650,36.8500,500,"Nairobi","Kenya","A treatment and rehabilitation center for wild animals inside the national park."
+"Uhuru Park","culture",-1.2890,36.8170,0,"Nairobi","Kenya","A large recreational park adjacent to the central business district."
+"Maasai Market","shopping",-1.2860,36.8200,0,"Nairobi","Kenya","Open-air market for traditional African crafts, beadwork, and fabrics."
+"Railway Museum","history",-1.2917,36.8224,600,"Nairobi","Kenya","Preserves the history of the 'Lunatic Line' with vintage steam locomotives."
+"Oloolua Nature Trail","nature",-1.3550,36.7080,600,"Nairobi","Kenya","Features a waterfall, caves, and a tropical forest walk in the Karen suburb."
+"Mamba Village Nairobi","nature",-1.3480,36.7880,250,"Nairobi","Kenya","A large crocodile farm featuring feeding sessions and camel rides."
+"GP Karting","relaxation",-1.3150,36.8050,1500,"Nairobi","Kenya","The premier motorsports facility in the city for racing enthusiasts."
+"Village Market","shopping",-1.2290,36.8040,0,"Nairobi","Kenya","An open-air shopping and entertainment complex with a distinctive African style."
+"Snake Park","nature",-1.2745,36.8140,400,"Nairobi","Kenya","Located next to the museum; displays various species of reptiles and amphibians."
+"Fort Jesus","history",-4.0664,39.6795,1200,"Mombasa","Kenya","A UNESCO World Heritage site built by the Portuguese in the 16th century."
+"Haller Park","nature",-3.9990,39.7180,1000,"Mombasa","Kenya","A former quarry transformed into an ecological park with giraffes and hippos."
+"Old Town Mombasa","culture",-4.0630,39.6780,0,"Mombasa","Kenya","Historic district with narrow streets and ancient Arab-style architecture."
+"Mombasa Marine National Park","nature",-4.0200,39.7400,2000,"Mombasa","Kenya","Protected marine area ideal for snorkeling and glass-bottom boat tours."
+"Mombasa Tusks","culture",-4.0570,39.6640,0,"Mombasa","Kenya","Giant aluminum tusks on Moi Avenue built to commemorate a royal visit."
+"Mamba Village Centre","nature",-4.0280,39.7150,1000,"Mombasa","Kenya","East Africa's largest crocodile farm featuring the life cycle of the reptiles."
+"Nyali Beach","relaxation",-4.0350,39.7150,0,"Mombasa","Kenya","A popular white-sand beach known for high-end resorts and water sports."
+"Mama Ngina Waterfront","relaxation",-4.0750,39.6780,0,"Mombasa","Kenya","A scenic public park with ocean views and local street food vendors."
+"Bombolulu Workshops","art",-4.0200,39.7100,500,"Mombasa","Kenya","A cultural center where physically disabled artisans create jewelry and crafts."
+"Bamburi Beach","relaxation",-4.0050,39.7300,0,"Mombasa","Kenya","Lively beach area with clear waters and many restaurants and clubs."
+"Mombasa Spice Market","shopping",-4.0620,39.6720,0,"Mombasa","Kenya","A sensory-rich market filled with exotic spices, teas, and local produce."
+"Jumba la Mtwana","history",-3.9500,39.7600,500,"Mombasa","Kenya","Ruins of a 14th-century Swahili village overlooking the Indian Ocean."
+"Nguuni Nature Sanctuary","nature",-4.0150,39.7100,800,"Mombasa","Kenya","A peaceful park where you can watch giraffes against a sunset backdrop."
+"Shimba Hills National Reserve","nature",-4.2250,39.4200,2500,"Mombasa","Kenya","One of the largest coastal forests in East Africa; home to the sable antelope."
+"Wild Waters","relaxation",-4.0285,39.7145,1500,"Mombasa","Kenya","A massive water park with slides, pools, and family entertainment."
+"Hindu Temple","culture",-4.0600,39.6650,0,"Mombasa","Kenya","Architecturally beautiful temple reflecting the city's diverse Indian heritage."
+"Likoni Ferry","relaxation",-4.0800,39.6680,0,"Mombasa","Kenya","The iconic boat crossing connecting Mombasa Island to the south coast."
+"Butterfly House","nature",-4.0665,39.6790,500,"Mombasa","Kenya","A live butterfly exhibit located within the Fort Jesus grounds."
+"Mtwapa Creek","nature",-3.9550,39.7550,0,"Mombasa","Kenya","A deep inlet known for boat rides, birdwatching, and seafood restaurants."
+"Pirates Beach","relaxation",-3.9900,39.7350,0,"Mombasa","Kenya","The most popular public beach in Mombasa, usually bustling with activity."
+"Kisumu Impala Sanctuary","nature",-0.1250,34.7450,1000,"Kisumu","Kenya","Lakeside sanctuary for impalas, zebras, and several primate species."
+"Kisumu Museum","history",-0.1080,34.7520,600,"Kisumu","Kenya","Features a traditional Luo homestead and a collection of local fauna."
+"Kit Mikayi","culture",-0.1200,34.5200,500,"Kisumu","Kenya","A 40-meter-high rock formation with legendary status in Luo culture."
+"Hippo Point","nature",-0.1220,34.7350,0,"Kisumu","Kenya","A popular viewing spot for Lake Victoria hippos and stunning sunsets."
+"Dunga Beach","food",-0.1380,34.7380,0,"Kisumu","Kenya","A vibrant fishing village famous for its fresh tilapia and boat rides."
+"Ndere Island National Park","nature",-0.1150,34.4800,1200,"Kisumu","Kenya","A small island on Lake Victoria home to eagles and crocodiles."
+"Dunga Hill Camp","relaxation",-0.1350,34.7360,0,"Kisumu","Kenya","A popular spot for sundowners, live music, and camping by the lake."
+"Kisumu Clock Tower","history",-0.1020,34.7500,0,"Kisumu","Kenya","A central landmark built in memory of Kassim Lakha."
+"West End Shopping Mall","shopping",-0.0980,34.7550,0,"Kisumu","Kenya","The city's modern hub for shopping, dining, and movies."
+"Kiboko Bay Resort","relaxation",-0.1300,34.7400,0,"Kisumu","Kenya","Offers boat excursions and bird watching along the Lake Victoria shores."
+"Dunga Wetland Boardwalk","nature",-0.1390,34.7390,200,"Kisumu","Kenya","A wooden trail through the marshlands for bird and sitatunga spotting."
+"Lwang'ni Beach","food",-0.1050,34.7420,0,"Kisumu","Kenya","Famous for its row of lakeside restaurants serving traditional fish dishes."
+"Riat Hills","nature",0.0200,34.7800,0,"Kisumu","Kenya","Offers the best panoramic view of Kisumu city and Lake Victoria."
+"Kisumu Yacht Club","relaxation",-0.1150,34.7380,500,"Kisumu","Kenya","A private club offering sailing and a serene environment by the water."
+"Masai Craft Market","shopping",-0.0950,34.7600,0,"Kisumu","Kenya","The place to buy authentic beadwork and carvings in Kisumu."
+"Milimani District","culture",-0.1100,34.7550,0,"Kisumu","Kenya","The historic and leafy suburb known for its old colonial architecture."
+"Jubilee Market","shopping",-0.1030,34.7530,0,"Kisumu","Kenya","One of the largest markets in Western Kenya for food and household items."
+"Kisumu Waterfront Park","relaxation",-0.1050,34.7400,0,"Kisumu","Kenya","A newly developed recreational space along the lake shore."
+"Kajulu Hills","nature",0.0150,34.8500,0,"Kisumu","Kenya","Rugged hills overlooking the city; perfect for hiking and exploration."
+"Kisumu Port","history",-0.1000,34.7400,0,"Kisumu","Kenya","The historic gateway for trade across Lake Victoria to Uganda and Tanzania."
+"Lake Nakuru National Park","nature",-0.3633,36.0883,1500,"Nakuru","Kenya","A premium park famous for its rhino sanctuary and seasonal pink flamingos."
+"Menengai Crater","nature",-0.2033,36.0622,500,"Nakuru","Kenya","One of the largest intact volcanic calderas in the world with hiking trails."
+"Lord Egerton Castle","history",-0.3614,35.9389,500,"Nakuru","Kenya","A fortress-like mansion built by an English lord for a lady who never stayed."
+"Hyrax Hill Prehistoric Site","history",-0.2831,36.0950,200,"Nakuru","Kenya","Archaeological site showing Neolithic settlements and iron age burials."
+"Lake Elementaita","nature",-0.4500,36.2500,0,"Nakuru","Kenya","A shallow soda lake that is a vital breeding ground for great white pelicans."
+"Baboon Cliff Viewpoint","nature",-0.3550,36.0650,0,"Nakuru","Kenya","An elevated viewpoint in the national park offering vistas of the lake below."
+"Makalia Falls","nature",-0.4850,36.0750,0,"Nakuru","Kenya","A hidden waterfall inside Lake Nakuru Park perfect for quiet picnics."
+"Kariandusi Museum","history",-0.4520,36.2750,200,"Nakuru","Kenya","Lower Paleolithic site discovered by Louis Leakey with obsidian hand axes."
+"Olkaria Geothermal Spa","relaxation",-0.8930,36.2880,2000,"Nakuru","Kenya","Natural hot water swimming pool heated by the earth's geothermal energy."
+"Nyayo Gardens","relaxation",-0.2850,36.0710,0,"Nakuru","Kenya","A central public park in Nakuru City used for relaxation and public events."
+"Lion Hill","nature",-0.3700,36.1100,0,"Nakuru","Kenya","A prime spot for spotting lions and leopards within the Nakuru park circuit."
+"Afraha Stadium","culture",-0.2920,36.0780,0,"Nakuru","Kenya","The main sports arena in Nakuru and home to major local football matches."
+"Soysambu Conservancy","nature",-0.4150,36.2100,2500,"Nakuru","Kenya","Private conservancy bordering Lake Elementaita with diverse Rift Valley wildlife."
+"Sleeping Warrior Hill","nature",-0.4750,36.2700,0,"Nakuru","Kenya","A jagged hill formation resembling a reclining human profile."
+"Lake Nakuru Lodge View","relaxation",-0.3850,36.1050,0,"Nakuru","Kenya","A scenic deck area perfect for viewing animals at the watering hole."
+"Out of Africa Lookout","nature",-0.3950,36.0550,0,"Nakuru","Kenya","A cliffside spot where parts of the famous movie 'Out of Africa' were filmed."
+"Mau Forest Edge","nature",-0.4500,35.9500,0,"Nakuru","Kenya","The fringes of the largest indigenous montane forest in East Africa."
+"Egi Hotel Roof","relaxation",-0.2810,36.0700,0,"Nakuru","Kenya","Popular city-center spot for viewing the Nakuru skyline and Menengai Crater."
+"Lanet Gate","culture",-0.3150,36.1250,0,"Nakuru","Kenya","A key entry point into the park known for its dense acacia forests."
+"Westside Mall","shopping",-0.2825,36.0620,0,"Nakuru","Kenya","The city's premier modern shopping and dining destination."
+"Chepkiit Waterfalls","nature",0.5750,35.1550,200,"Eldoret","Kenya","Dramatic waterfall on the Kipkaren River surrounded by rocky cliffs."
+"Eldoret Nature & Culture Centre","culture",0.5050,35.2850,500,"Eldoret","Kenya","A family-oriented zoo and cultural museum featuring Kenyan traditions."
+"Poa Place Resort","relaxation",0.5080,35.2860,200,"Eldoret","Kenya","A leisure park with traditional huts, swimming pools, and amusement rides."
+"Eldoret War Cemetery","history",0.5250,35.2750,0,"Eldoret","Kenya","A beautifully maintained Commonwealth war graves site from WWII."
+"Kipchoge Keino Stadium","culture",0.5180,35.2650,0,"Eldoret","Kenya","Iconic athletic stadium where world-famous Kenyan runners train."
+"Koromosho Falls","nature",0.4850,35.1250,100,"Eldoret","Kenya","A 70-meter drop on the Sosiani River hidden in a deep riverine forest."
+"Iten Viewpoint","nature",0.6750,35.5050,0,"Eldoret","Kenya","Famous cliff edge 30km away offering views of the Kerio Valley floor."
+"Eldoret Arboretum","nature",0.5350,35.2950,50,"Eldoret","Kenya","A peaceful green retreat with diverse tree species and walking paths."
+"Kesses Dam","nature",0.2950,35.3150,100,"Eldoret","Kenya","Man-made reservoir popular for boat rides, fishing, and bird watching."
+"Rupa's Mall","shopping",0.5150,35.2920,0,"Eldoret","Kenya","A massive modern commercial hub for shopping, cinema, and fine dining."
+"Nandi Hills","nature",0.1150,35.1750,0,"Eldoret","Kenya","Scenic highland tea plantations located a short drive from the city."
+"Eldoret City of Champions Monument","culture",0.5220,35.2710,0,"Eldoret","Kenya","A central landmark celebrating the region's global athletic dominance."
+"Kiplombe Caves","nature",0.5550,35.1850,100,"Eldoret","Kenya","Ancient volcanic caves and mini-falls tucked away in a rugged landscape."
+"Naiberi River Resort","relaxation",0.4850,35.4150,500,"Eldoret","Kenya","An artistic resort built with local stone and wood on a riverbank."
+"Eldoret Museum","history",0.5185,35.2740,200,"Eldoret","Kenya","Displays artifacts and history of the Kalenjin people and colonial era."
+"Moi University Gardens","nature",0.2850,35.2950,0,"Eldoret","Kenya","Lush botanical areas within the main university campus."
+"Sosiani River Walk","nature",0.5210,35.2680,0,"Eldoret","Kenya","A quiet riverside path used by locals for morning walks and nature views."
+"Kapsoya Hills","nature",0.5450,35.3150,0,"Eldoret","Kenya","A rising rocky area providing a great panoramic view of the Eldoret skyline."
+"Daima Towers","culture",0.5160,35.2730,0,"Eldoret","Kenya","The tallest building in Eldoret, a symbol of the city's rapid growth."
+"Sirikwa Holes","history",0.6250,35.3850,0,"Eldoret","Kenya","Archaeological depressions believed to be ancient livestock enclosures."
+
+----------------------------------------------------------------------------------------
+
+name,category,latitude,longitude,entry_fee,city,country,description
+"Tower of London","history",51.5081,-0.0759,35,"London","United Kingdom","Historic castle and fortress housing the Crown Jewels and 1,000 years of royal history."
+"The London Eye","nature",51.5033,-0.1195,33,"London","United Kingdom","Giant observation wheel on the South Bank offering 360-degree views of the city skyline."
+"British Museum","culture",51.5194,-0.1270,0,"London","United Kingdom","World-renowned museum dedicated to human history, art, and culture; entry is free."
+"Buckingham Palace","history",51.5014,-0.1419,32,"London","United Kingdom","The official London residence of the UK monarchs, famous for the Changing of the Guard."
+"Westminster Abbey","history",51.4994,-0.1273,29,"London","United Kingdom","A large Gothic abbey church that has hosted every British coronation since 1066."
+"St. Paul's Cathedral","culture",51.5138,-0.0984,23,"London","United Kingdom","An iconic cathedral with a world-famous dome and the historic Whispering Gallery."
+"The View from The Shard","relaxation",51.5045,-0.0865,32,"London","United Kingdom","The highest viewpoint in Western Europe, offering views up to 40 miles away."
+"Natural History Museum","nature",51.4967,-0.1764,0,"London","United Kingdom","Houses over 80 million life and earth science specimens, including dinosaur skeletons."
+"Tower Bridge","history",51.5055,-0.0754,12,"London","United Kingdom","A combined bascule and suspension bridge with glass walkways and Victorian engine rooms."
+"Tate Modern","art",51.5076,-0.0994,0,"London","United Kingdom","A former power station turned into a gallery for international modern and contemporary art."
+"Kensington Palace","history",51.5050,-0.1877,20,"London","United Kingdom","A royal residence in Kensington Gardens, once home to Queen Victoria and Princess Diana."
+"Sky Garden","nature",51.5113,-0.0837,0,"London","United Kingdom","London's highest public garden with observation decks and an open-air terrace; free but must book."
+"Covent Garden","shopping",51.5117,-0.1240,0,"London","United Kingdom","A vibrant district known for its street performers, luxury boutiques, and craft markets."
+"Borough Market","food",51.5055,-0.0908,0,"London","United Kingdom","One of London's oldest and largest food markets, famous for artisanal produce and street food."
+"Hyde Park","nature",51.5073,-0.1657,0,"London","United Kingdom","The largest of the Royal Parks, home to the Serpentine Lake and Speakers' Corner."
+"The National Gallery","art",51.5089,-0.1283,0,"London","United Kingdom","Art museum in Trafalgar Square housing over 2,300 European paintings from the mid-13th century."
+"Churchill War Rooms","history",51.5021,-0.1290,28,"London","United Kingdom","The underground bunker where Winston Churchill directed the Second World War."
+"Royal Observatory Greenwich","nature",51.4769,0.0005,18,"London","United Kingdom","Home of Greenwich Mean Time and the historic Prime Meridian of the world."
+"Shakespeare's Globe","culture",51.5081,-0.0971,25,"London","United Kingdom","A reconstruction of the original Elizabethan playhouse showing traditional theater."
+"Camden Market","shopping",51.5417,-0.1456,0,"London","United Kingdom","A eclectic collection of markets selling fashion, crafts, and food with an alternative vibe."
+"Edinburgh Castle","history",55.9486,-3.1999,20,"Edinburgh","United Kingdom","A historic fortress that dominates the skyline of Edinburgh from its rock."
+"The Royal Mile","culture",55.9500,-3.1850,0,"Edinburgh","United Kingdom","The main thoroughfare of the Old Town, stretching from the Castle to the Palace."
+"Arthur's Seat","nature",55.9441,-3.1618,0,"Edinburgh","United Kingdom","An ancient volcano and the highest point in Holyrood Park with panoramic city views."
+"Palace of Holyroodhouse","history",55.9527,-3.1722,18,"Edinburgh","United Kingdom","The official residence of the British monarch in Scotland, located at the end of the Royal Mile."
+"National Museum of Scotland","culture",55.9470,-3.1890,0,"Edinburgh","United Kingdom","Museum covering Scottish history, world cultures, and science in a stunning grand hall."
+"Calton Hill","nature",55.9550,-3.1830,0,"Edinburgh","United Kingdom","Known for its collection of historic monuments and iconic views of the city center."
+"Royal Botanic Garden","nature",55.9647,-3.2088,0,"Edinburgh","United Kingdom","A world-renowned center for plant science and a beautiful 70-acre landscape garden."
+"The Real Mary King's Close","history",55.9500,-3.1910,21,"Edinburgh","United Kingdom","An underground tour of 17th-century streets buried beneath the Royal Mile."
+"Scott Monument","culture",55.9524,-3.1933,8,"Edinburgh","United Kingdom","A Victorian Gothic monument dedicated to Sir Walter Scott; visitors can climb to the top."
+"Princes Street Gardens","nature",55.9515,-3.2000,0,"Edinburgh","United Kingdom","Public park separating the Old and New Towns, featuring the famous floral clock."
+"Greyfriars Kirkyard","history",55.9468,-3.1925,0,"Edinburgh","United Kingdom","Historic graveyard famous for 'Greyfriars Bobby' and its links to Harry Potter."
+"Scottish National Gallery","art",55.9509,-3.1957,0,"Edinburgh","United Kingdom","Home to Scotland's national collection of fine art from the Renaissance to the early 20th century."
+"The Scotch Whisky Experience","food",55.9488,-3.1960,21,"Edinburgh","United Kingdom","Interactive tour exploring the history and production of Scotland's national drink."
+"Camera Obscura","culture",55.9489,-3.1955,21,"Edinburgh","United Kingdom","An attraction full of optical illusions and hands-on science exhibits near the Castle."
+"Edinburgh Zoo","nature",55.9422,-3.2693,25,"Edinburgh","United Kingdom","Conservation zoo home to the UK's only giant pandas and a famous penguin parade."
+"Dean Village","nature",55.9520,-3.2200,0,"Edinburgh","United Kingdom","A picturesque former grain milling village on the Water of Leith."
+"St. Giles' Cathedral","culture",55.9495,-3.1908,0,"Edinburgh","United Kingdom","The historic High Kirk of Edinburgh, a centerpiece of the city's religious history."
+"Water of Leith Walkway","nature",55.9650,-3.1750,0,"Edinburgh","United Kingdom","A 12-mile tranquil public path through the heart of the city following the river."
+"Scottish Parliament Building","history",55.9519,-3.1751,0,"Edinburgh","United Kingdom","An architectural landmark at Holyrood, open for public tours of Scottish government."
+"The Shore Leith","relaxation",55.9760,-3.1720,0,"Edinburgh","United Kingdom","A trendy waterfront area with award-winning restaurants and classic pubs."
+"Old Trafford Stadium","culture",53.4631,-2.2913,28,"Manchester","United Kingdom","The iconic home of Manchester United; stadium tours include the museum and tunnel."
+"Etihad Stadium","culture",53.4831,-2.2004,25,"Manchester","United Kingdom","The state-of-the-art home of Manchester City, offering behind-the-scenes tours."
+"Science and Industry Museum","culture",53.4769,-2.2554,0,"Manchester","United Kingdom","Based on the site of the world's oldest surviving passenger railway station."
+"Manchester Museum","culture",53.4665,-2.2345,0,"Manchester","United Kingdom","The UK's largest university museum with 4.5 million objects including Egyptology."
+"Manchester Art Gallery","art",53.4789,-2.2419,0,"Manchester","United Kingdom","Public art museum with a world-class collection of Pre-Raphaelite paintings."
+"The Lowry","culture",53.4716,-2.2985,0,"Manchester","United Kingdom","An arts center in Salford Quays featuring galleries of L.S. Lowry's work and theaters."
+"John Rylands Library","history",53.4800,-2.2486,0,"Manchester","United Kingdom","A stunning neo-Gothic building housing one of the world's finest collections of rare books."
+"National Football Museum","culture",53.4849,-2.2423,14,"Manchester","United Kingdom","The world's biggest museum dedicated to the beautiful game and its social impact."
+"Heaton Park","nature",53.5369,-2.2471,0,"Manchester","United Kingdom","One of the largest municipal parks in Europe, with an animal center and boating lake."
+"Whitworth Art Gallery","art",53.4600,-2.2280,0,"Manchester","United Kingdom","An 'art gallery in the park' known for its textiles, wallpapers, and sculpture garden."
+"Manchester Cathedral","culture",53.4852,-2.2445,0,"Manchester","United Kingdom","A Grade I listed medieval church with intricate woodwork and modern stained glass."
+"The Pankhurst Centre","history",53.4658,-2.2285,0,"Manchester","United Kingdom","The former home of Emmeline Pankhurst and birthplace of the Suffragette movement."
+"MediaCityUK","relaxation",53.4725,-2.2990,0,"Manchester","United Kingdom","A modern digital hub on the waterfront, home to BBC and ITV studios."
+"Castlefield Urban Heritage Park","history",53.4740,-2.2530,0,"Manchester","United Kingdom","The site of the Roman fort Mamucium and home to beautiful canals and viaducts."
+"People's History Museum","culture",53.4820,-2.2520,0,"Manchester","United Kingdom","The national museum of democracy, telling the story of the working people's rights."
+"Afflecks","shopping",53.4830,-2.2360,0,"Manchester","United Kingdom","An iconic emporium of eclecticism, a totem of indie commerce in the Northern Quarter."
+"Chetham's Library","history",53.4858,-2.2435,0,"Manchester","United Kingdom","The oldest public library in the English-speaking world, founded in 1653."
+"Fletcher Moss Botanical Garden","nature",53.4070,-2.2310,0,"Manchester","United Kingdom","A quiet garden and wildlife habitat famous for its rockery and diverse plant life."
+"Chinatown Manchester","food",53.4790,-2.2390,0,"Manchester","United Kingdom","The second largest Chinatown in the UK, marked by a stunning imperial archway."
+"Royal Exchange Theatre","culture",53.4828,-2.2444,0,"Manchester","United Kingdom","A stunning 'theatre in the round' built inside a former cotton exchange hall."
+"Library of Birmingham","culture",52.4797,-1.9086,0,"Birmingham","United Kingdom","A major flagship library with striking modern architecture and rooftop terrace gardens."
+"Cadbury World","food",52.4300,-1.9300,21,"Birmingham","United Kingdom","An immersive chocolate-themed attraction located on the site of the original factory."
+"Birmingham Museum and Art Gallery","art",52.4800,-1.9030,0,"Birmingham","United Kingdom","Home to the Staffordshire Hoard and a world-class collection of Pre-Raphaelite art."
+"The Bullring & Grand Central","shopping",52.4776,-1.8943,0,"Birmingham","United Kingdom","One of the UK's largest shopping centers, featuring the iconic Selfridges building."
+"National SEA LIFE Centre","nature",52.4780,-1.9120,20,"Birmingham","United Kingdom","Large aquarium featuring a 360-degree ocean tunnel and rescue penguins."
+"Gas Street Basin","history",52.4760,-1.9080,0,"Birmingham","United Kingdom","The heart of the canal network where old narrowboats meet modern bars and cafes."
+"Black Country Living Museum","history",52.5140,-2.0770,22,"Birmingham","United Kingdom","An open-air museum where historic buildings have been rebuilt to tell the story of the Industrial Revolution."
+"Jewellery Quarter","culture",52.4880,-1.9130,0,"Birmingham","United Kingdom","A historic district producing 40% of all UK jewellery with a museum on-site."
+"Winterbourne House and Garden","nature",52.4540,-1.9310,8,"Birmingham","United Kingdom","A beautiful Edwardian historic house and botanical garden owned by the University."
+"Symphony Hall","culture",52.4789,-1.9089,0,"Birmingham","United Kingdom","Widely considered one of the finest concert halls in the world for its acoustics."
+"Aston Hall","history",52.5050,-1.8840,15,"Birmingham","United Kingdom","A magnificent 17th-century Jacobean mansion set within a public park."
+"Birmingham Botanical Gardens","nature",52.4640,-1.9300,8,"Birmingham","United Kingdom","Victorian-era gardens with glasshouses, a playground, and exotic bird collections."
+"Thinktank Science Museum","science",52.4820,-1.8860,14,"Birmingham","United Kingdom","An award-winning science museum featuring a planetarium and industrial machinery."
+"Victoria Square","culture",52.4790,-1.9020,0,"Birmingham","United Kingdom","The city's central square, home to the Town Hall and the 'Floozie in the Jacuzzi' fountain."
+"Cannon Hill Park","nature",52.4530,-1.9040,0,"Birmingham","United Kingdom","The city's most popular park with boating lakes, tennis courts, and a mini-golf course."
+"The Custard Factory","art",52.4750,-1.8840,0,"Birmingham","United Kingdom","An independent shopping and creative hub located in the former Bird's Custard factory."
+"Ikon Gallery","art",52.4780,-1.9110,0,"Birmingham","United Kingdom","An internationally acclaimed contemporary art venue housed in a neo-Gothic school building."
+"Electric Cinema","culture",52.4770,-1.8980,12,"Birmingham","United Kingdom","The oldest working cinema in the UK, offering a luxury vintage movie experience."
+"Lichfield Cathedral","history",52.6850,-1.8300,0,"Birmingham","United Kingdom","Located nearby, it is the only medieval English cathedral with three spires."
+"Pen Museum","history",52.4830,-1.9100,5,"Birmingham","United Kingdom","A unique museum exploring Birmingham's history as the center of the world's pen trade."
+"Kelvingrove Art Gallery and Museum","art",55.8686,-4.2906,0,"Glasgow","United Kingdom","A stunning red sandstone building housing 22 galleries with everything from arms to art."
+"Glasgow Botanic Gardens","nature",55.8790,-4.2910,0,"Glasgow","United Kingdom","Famous for its Victorian glasshouses, especially the impressive Kibble Palace."
+"Riverside Museum","science",55.8650,-4.3060,0,"Glasgow","United Kingdom","An award-winning transport museum designed by Zaha Hadid on the banks of the Clyde."
+"Glasgow Cathedral","history",55.8630,-4.2340,0,"Glasgow","United Kingdom","The oldest building in Glasgow and the only medieval cathedral to survive the Reformation."
+"Necropolis","history",55.8620,-4.2310,0,"Glasgow","United Kingdom","A Victorian cemetery on a hill near the Cathedral with spectacular city views."
+"George Square","culture",55.8610,-4.2500,0,"Glasgow","United Kingdom","The civic heart of the city, surrounded by statues and the ornate City Chambers."
+"Glasgow Science Centre","science",55.8590,-4.2940,12,"Glasgow","United Kingdom","Features a planetarium, an IMAX cinema, and hundreds of interactive exhibits."
+"The Lighthouse","art",55.8600,-4.2550,0,"Glasgow","United Kingdom","Scotland's Centre for Design and Architecture, designed by Charles Rennie Mackintosh."
+"People's Palace","culture",55.8510,-4.2370,0,"Glasgow","United Kingdom","A museum and glasshouse (Winter Gardens) telling the story of Glasgow's social history."
+"Glasgow School of Art","art",55.8660,-4.2630,10,"Glasgow","United Kingdom","An architectural masterpiece by Mackintosh, currently undergoing restoration tours."
+"Pollok Country Park","nature",55.8280,-4.3180,0,"Glasgow","United Kingdom","Glasgow's largest park, home to the Burrell Collection and Highland cattle."
+"The Burrell Collection","art",55.8310,-4.3070,0,"Glasgow","United Kingdom","An extraordinary collection of art and antiques gifted to the city by Sir William Burrell."
+"Buchanan Street","shopping",55.8610,-4.2530,0,"Glasgow","United Kingdom","One of the UK's premier shopping streets, known for its high-end architecture."
+"West End Lanes","culture",55.8750,-4.2950,0,"Glasgow","United Kingdom","Quirky cobbled lanes like Ashton Lane, famous for bars, restaurants, and a tiny cinema."
+"University of Glasgow","history",55.8710,-4.2880,0,"Glasgow","United Kingdom","One of the world's oldest universities, with a campus resembling Hogwarts."
+"Hunterian Museum","culture",55.8720,-4.2890,0,"Glasgow","United Kingdom","The oldest museum in Scotland, featuring anatomical and archaeological treasures."
+"Barras Market","shopping",55.8550,-4.2370,0,"Glasgow","United Kingdom","A world-famous street market and indoor space known for its local character and antiques."
+"Clyde Arc (Squinty Bridge)","science",55.8580,-4.2830,0,"Glasgow","United Kingdom","A modern landmark bridge spanning the River Clyde with an unusual curved design."
+"St Mungo Museum of Religious Life","culture",55.8625,-4.2360,0,"Glasgow","United Kingdom","A museum dedicated to exploring the importance of religion in peoples' lives across the world."
+"Tenement House","history",55.8670,-4.2650,9,"Glasgow","United Kingdom","A preserved middle-class Glasgow home from the early 20th century."
+
+-----------------------------------------------------------------------------
+
+name,category,latitude,longitude,entry_fee,city,country,description
+"Eiffel Tower","history",48.8584,2.2945,27,"Paris","France","The iconic iron lattice tower on the Champ de Mars; a global symbol of France."
+"Louvre Museum","art",48.8606,2.3376,17,"Paris","France","The world's largest art museum and a historic monument, home to the Mona Lisa."
+"Notre-Dame Cathedral","culture",48.8530,2.3499,0,"Paris","France","A medieval Catholic cathedral considered one of the finest examples of French Gothic architecture."
+"Arc de Triomphe","history",48.8738,2.2950,13,"Paris","France","Honors those who fought and died for France in the French Revolutionary and Napoleonic Wars."
+"Sacré-Cœur Basilica","culture",48.8867,2.3431,0,"Paris","France","A Roman Catholic church dedicated to the Sacred Heart of Jesus, located at the summit of Montmartre."
+"Musée d'Orsay","art",48.8599,2.3265,16,"Paris","France","Housed in a former railway station, it holds mainly French art dating from 1848 to 1914."
+"Palais Garnier","culture",48.8719,2.3316,14,"Paris","France","A 1,979-seat opera house built from 1861 to 1875 for the Paris Opera."
+"Sainte-Chapelle","history",48.8554,2.3450,12,"Paris","France","A royal medieval Gothic chapel with stunning 13th-century stained glass windows."
+"Jardin du Luxembourg","nature",48.8462,2.3371,0,"Paris","France","Created in 1612 by Marie de' Medici, these gardens offer beautiful lawns and fountains."
+"Centre Pompidou","art",48.8606,2.3522,15,"Paris","France","A complex building in the high-tech architectural style, housing a vast public library."
+"Panthéon","history",48.8462,2.3464,12,"Paris","France","An edifice in the Latin Quarter that serves as a mausoleum for distinguished French citizens."
+"Musée de l'Orangerie","art",48.8637,2.3227,13,"Paris","France","An art gallery of impressionist and post-impressionist paintings located in the Tuileries Gardens."
+"Les Invalides","history",48.8566,2.3126,14,"Paris","France","A complex of buildings containing museums and monuments relating to the military history of France."
+"Catacombs of Paris","history",48.8338,2.3324,29,"Paris","France","Underground ossuaries which hold the remains of more than six million people."
+"Tuileries Garden","nature",48.8635,2.3275,0,"Paris","France","A public garden located between the Louvre and the Place de la Concorde."
+"Place de la Concorde","history",48.8655,2.3211,0,"Paris","France","One of the major public squares in Paris, featuring the Luxor Obelisk."
+"Shakespeare and Company","culture",48.8525,2.3471,0,"Paris","France","An iconic English-language bookshop that served as a center for expatriate literary life."
+"Musée Rodin","art",48.8553,2.3159,13,"Paris","France","A museum dedicated to the works of the French sculptor Auguste Rodin."
+"Pont Neuf","history",48.8580,2.3414,0,"Paris","France","The oldest standing bridge across the river Seine in Paris."
+"Palais de Tokyo","art",48.8642,2.2966,12,"Paris","France","A building dedicated to modern and contemporary art, located near the Eiffel Tower."
+"Vieux Port","relaxation",43.2951,5.3739,0,"Marseille","France","The Old Port is the historical center of Marseille and the main focal point for tourists."
+"Basilique Notre-Dame de la Garde","culture",43.2845,5.3711,0,"Marseille","France","A Catholic basilica and the city's most-visited landmark, offering panoramic views."
+"MuCEM","culture",43.2969,5.3611,11,"Marseille","France","Museum of European and Mediterranean Civilisations, featuring a striking modern lattice facade."
+"Le Panier","culture",43.2985,5.3681,0,"Marseille","France","The oldest neighborhood in Marseille, famous for its narrow streets and colorful murals."
+"Calanques National Park","nature",43.2120,5.4520,0,"Marseille","France","A wild coastal area with dramatic limestone cliffs and hidden turquoise inlets."
+"Château d'If","history",43.2803,5.3269,6,"Marseille","France","A fortress and former prison on the island of If, made famous by 'The Count of Monte Cristo'."
+"Cathédrale de la Major","culture",43.2998,5.3648,0,"Marseille","France","A neo-Byzantine cathedral and one of the largest in France, located near the port."
+"Fort Saint-Jean","history",43.2955,5.3605,0,"Marseille","France","A fortification built in 1660 by Louis XIV at the entrance to the Old Port."
+"Palais Longchamp","art",43.3048,5.3946,0,"Marseille","France","A monument housing the city's Museum of Fine Arts and Natural History Museum."
+"Cours Julien","art",43.2934,5.3842,0,"Marseille","France","A vibrant district known for its street art, alternative boutiques, and lively cafes."
+"La Canebière","shopping",43.2973,5.3800,0,"Marseille","France","The historic high street of Marseille, stretching from the Old Port to the Reformé quarter."
+"Vallon des Auffes","relaxation",43.2853,5.3508,0,"Marseille","France","A small, picturesque traditional fishing haven tucked under a large bridge."
+"Abbaye Saint-Victor","history",43.2905,5.3653,2,"Marseille","France","A former French abbey founded during the late Roman period, known for its crypts."
+"Prado Beach","relaxation",43.2625,5.3745,0,"Marseille","France","A popular seaside park and collection of beaches for swimming and sports."
+"Marseille History Museum","history",43.2975,5.3755,5,"Marseille","France","Exhibits showing the archaeological history of Marseille, founded by the Greeks."
+"Corniche Président-John-Fitzgerald-Kennedy","nature",43.2750,5.3650,0,"Marseille","France","A scenic roadway and walkway along the coast offering stunning sea views."
+"Stade Vélodrome","culture",43.2698,5.3959,18,"Marseille","France","The legendary home stadium of Olympique de Marseille, offering guided tours."
+"Frioul Archipelago","nature",43.2770,5.3050,11,"Marseille","France","A group of four islands accessible by ferry, known for rocky beaches and birdlife."
+"Unité d'Habitation","culture",43.2614,5.3965,10,"Marseille","France","A modernist residential housing design principle developed by Le Corbusier."
+"Musée des Beaux-Arts","art",43.3050,5.3950,5,"Marseille","France","Located in the Palais Longchamp, it houses 16th to 19th-century paintings."
+"Basilica of Notre-Dame de Fourvière","culture",45.7623,4.8223,0,"Lyon","France","A minor basilica dominating the city skyline from the 'Hill that Prays'."
+"Vieux Lyon","history",45.7620,4.8270,0,"Lyon","France","The largest Renaissance district in Lyon, full of secret passageways called Traboules."
+"Parc de la Tête d'Or","nature",45.7790,4.8540,0,"Lyon","France","A large urban park with a lake, a free zoo, and beautiful rose gardens."
+"Place Bellecour","culture",45.7578,4.8322,0,"Lyon","France","One of the largest open pedestrian squares in Europe, located in the heart of Lyon."
+"Musée des Confluences","science",45.7325,4.8185,9,"Lyon","France","A science center and anthropology museum located at the junction of the Rhône and Saône."
+"Ancient Theatre of Fourvière","history",45.7597,4.8200,0,"Lyon","France","The oldest Roman theatre in France, still used today for the Nuits de Fourvière festival."
+"Lyon Cathedral","culture",45.7608,4.8272,0,"Lyon","France","A medieval cathedral dedicated to Saint John the Baptist and the seat of the Archbishop."
+"Mur des Canuts","art",45.7780,4.8320,0,"Lyon","France","A giant outdoor fresco depicting the life and history of the local silk workers."
+"Musée Lumière","science",45.7445,4.8695,9,"Lyon","France","A museum celebrating the birth of cinema in the former home of the Lumière brothers."
+"La Croix-Rousse","culture",45.7740,4.8300,0,"Lyon","France","The 'Hill that Works', historically the center of Lyon's silk industry."
+"Musée des Beaux-Arts de Lyon","art",45.7672,4.8336,8,"Lyon","France","One of the largest French art museums, located in a former 17th-century abbey."
+"Les Halles de Lyon Paul Bocuse","food",45.7623,4.8510,0,"Lyon","France","A legendary indoor food market named after the world-famous French chef."
+"Place des Terreaux","culture",45.7674,4.8335,0,"Lyon","France","A historic square featuring the Hotel de Ville and the Bartholdi Fountain."
+"Traboules of Lyon","history",45.7640,4.8280,0,"Lyon","France","Secret covered walkways used by silk merchants to transport cloth safely."
+"Aquarium of Lyon","nature",45.7190,4.8110,15,"Lyon","France","Located in the suburbs, it features 47 tanks with species from all over the world."
+"Mini World Lyon","relaxation",45.7600,4.9200,14,"Lyon","France","An animated miniature park with thousands of tiny details and figures."
+"Grand Hôtel-Dieu","history",45.7580,4.8370,0,"Lyon","France","A former hospital transformed into a luxury shopping, dining, and hotel complex."
+"Gallo-Roman Museum","history",45.7605,4.8205,4,"Lyon","France","An underground museum displaying Roman artifacts found on the Fourvière hill."
+"Parc des Hauteurs","nature",45.7645,4.8210,0,"Lyon","France","A green pathway linking the Fourvière basilica to the Loyasse cemetery."
+"Fresque des Lyonnais","art",45.7680,4.8300,0,"Lyon","France","A massive mural depicting 30 of Lyon's most famous historic and contemporary figures."
+"Place du Capitole","culture",43.6044,1.4442,0,"Toulouse","France","The beating heart of the city, dominated by the magnificent town hall and opera house."
+"Basilique Saint-Sernin","culture",43.6085,1.4419,0,"Toulouse","France","A UNESCO World Heritage site and one of the greatest Romanesque churches in Europe."
+"Cité de l'Espace","science",43.5866,1.4930,24,"Toulouse","France","A theme park focused on space and the conquest of the cosmos with full-scale rockets."
+"Musée des Augustins","art",43.6008,1.4461,5,"Toulouse","France","Fine arts museum housed in a former Gothic cloister."
+"Couvent des Jacobins","history",43.6033,1.4400,5,"Toulouse","France","A jewel of Languedoc Gothic architecture, known for its unique palm-tree vaulting."
+"Pont Neuf Toulouse","history",43.5997,1.4372,0,"Toulouse","France","A 16th-century bridge across the Garonne, despite its name meaning 'New Bridge'."
+"Jardin des Plantes","nature",43.5930,1.4520,0,"Toulouse","France","A historic botanical garden providing a peaceful escape near the city center."
+"Canal du Midi","nature",43.6100,1.4400,0,"Toulouse","France","A UNESCO-listed waterway connecting the Garonne to the Mediterranean Sea."
+"Muséum de Toulouse","science",43.5940,1.4490,9,"Toulouse","France","Natural history museum featuring a wide collection of botanical and zoological specimens."
+"Hôtel d'Assézat","history",43.6002,1.4415,9,"Toulouse","France","A spectacular Renaissance mansion housing the Bemberg Foundation art collection."
+"Aeroscopia","science",43.6600,1.3600,14,"Toulouse","France","An aeronautical museum where you can walk inside a Concorde and an Airbus A380."
+"Les Abattoirs","art",43.6005,1.4315,10,"Toulouse","France","A modern and contemporary art museum located in the former city slaughterhouse."
+"Musée Saint-Raymond","history",43.6080,1.4410,5,"Toulouse","France","The archaeology museum of Toulouse, displaying a rich collection of Roman sculptures."
+"Quai de la Daurade","relaxation",43.6010,1.4390,0,"Toulouse","France","A popular riverside spot for locals to watch the sunset over the Garonne."
+"Théâtre du Capitole","culture",43.6045,1.4440,0,"Toulouse","France","One of the most prestigious opera houses in France, located within the Capitole."
+"La Halle de la Machine","art",43.5850,1.4780,11,"Toulouse","France","A living museum of giant mechanical street-theater machines, including a Minotaur."
+"Saint-Stephen's Cathedral","culture",43.5998,1.4505,0,"Toulouse","France","An unusual cathedral composed of two distinct parts in different Gothic styles."
+"Le Bikini","culture",43.5700,1.4300,0,"Toulouse","France","A legendary concert venue known for its excellent acoustics and alternative scene."
+"Jardin Japonais","nature",43.6110,1.4360,0,"Toulouse","France","A Zen garden within the Compans-Caffarelli park inspired by 14th-century Kyoto."
+"Market Victor Hugo","food",43.6060,1.4460,0,"Toulouse","France","A bustling traditional food market famous for its upstairs restaurants."
+"Promenade des Anglais","relaxation",43.6946,7.2625,0,"Nice","France","The world-famous waterfront walkway stretching along the Baie des Anges."
+"Vieille Ville (Old Town)","culture",43.6960,7.2750,0,"Nice","France","A labyrinth of narrow streets filled with markets, baroque churches, and cafes."
+"Castle Hill (Colline du Château)","nature",43.6945,7.2790,0,"Nice","France","A historic hilltop park offering the most iconic views of the city and port."
+"Marc Chagall National Museum","art",43.7093,7.2703,8,"Nice","France","Dedicated to the work of painter Marc Chagall, specifically his biblical messages."
+"Matisse Museum","art",43.7194,7.2762,10,"Nice","France","Housed in a 17th-century villa, it traces the artistic evolution of Henri Matisse."
+"Cours Saleya Market","food",43.6953,7.2745,0,"Nice","France","A daily market famous for its flowers, local produce, and Niçois specialties."
+"Nice Cathedral","culture",43.6970,7.2753,0,"Nice","France","The Sainte-Réparate Cathedral, a beautiful example of Baroque architecture."
+"Place Masséna","culture",43.6969,7.2711,0,"Nice","France","The main historic square of Nice, known for its red buildings and black and white tiles."
+"Phoenix Parc Floral de Nice","nature",43.6685,7.2185,5,"Nice","France","A vast botanical garden and zoo near the airport with a huge pyramid glasshouse."
+"Museum of Modern and Contemporary Art","art",43.7011,7.2785,10,"Nice","France","Known as MAMAC, it features works from the New Realism and Pop Art movements."
+"Russian Orthodox Cathedral","culture",43.7038,7.2539,0,"Nice","France","The largest Eastern Orthodox cathedral in Western Europe, featuring onion domes."
+"Garibaldi Square","culture",43.7008,7.2801,0,"Nice","France","A grand historic square honoring Giuseppe Garibaldi, surrounded by yellow buildings."
+"Port Lympia","relaxation",43.6950,7.2850,0,"Nice","France","The colorful old port of Nice, filled with luxury yachts and traditional fishing boats."
+"Villa Masséna Museum","history",43.6944,7.2585,10,"Nice","France","A museum of art and history on the Promenade des Anglais inside a grand villa."
+"Terra Amata Museum","history",43.6980,7.2890,5,"Nice","France","An archaeological museum on the site of one of the oldest known human habitations."
+"Mont Boron","nature",43.6890,7.3000,0,"Nice","France","A forest park on a hill with hiking trails and spectacular coastal panoramas."
+"Avenue Jean Médecin","shopping",43.7000,7.2680,0,"Nice","France","The main commercial artery of Nice, perfect for shopping and sightseeing."
+"Nice Opera","culture",43.6955,7.2725,0,"Nice","France","A beautiful theater built in 1885, home to the city's opera and ballet."
+"War Memorial of Nice","history",43.6938,7.2825,0,"Nice","France","A massive monument carved into the side of Castle Hill honoring WWI soldiers."
+"Monastère de Cimiez","culture",43.7198,7.2780,0,"Nice","France","A Franciscan monastery with beautiful gardens and the tomb of Henri Matisse."
+
+----------------------------------------------
+
+name,category,latitude,longitude,entry_fee,city,country,description
+"Senso-ji Temple","culture",35.7148,139.7967,0,"Tokyo","Japan","Tokyo's oldest temple, dedicated to the goddess Kannon, featuring the iconic Kaminarimon Gate."
+"Tokyo Skytree","relaxation",35.7101,139.8107,3100,"Tokyo","Japan","The tallest structure in Japan, offering futuristic observation decks with views of Mount Fuji."
+"Meiji Jingu Shrine","culture",35.6764,139.6993,0,"Tokyo","Japan","A Shinto shrine dedicated to Emperor Meiji, located in a lush forest in the heart of the city."
+"Shibuya Crossing","relaxation",35.6595,139.7005,0,"Tokyo","Japan","The world's busiest pedestrian intersection and a symbol of Tokyo's neon-lit energy."
+"Tokyo Tower","history",35.6586,139.7454,1200,"Tokyo","Japan","A communications and observation tower inspired by the Eiffel Tower, painted white and international orange."
+"Ghibli Museum","art",35.6963,139.5704,1000,"Tokyo","Japan","A whimsical museum showcasing the animation work of Studio Ghibli; tickets must be booked months in advance."
+"Imperial Palace East Garden","history",35.6852,139.7528,0,"Tokyo","Japan","The former site of Edo Castle's innermost circles of defense, now a beautiful public garden."
+"Ueno Park","nature",35.7141,139.7722,0,"Tokyo","Japan","A large public park home to many museums, temples, and the famous Ueno Zoo."
+"Tokyo National Museum","art",35.7189,139.7765,1000,"Tokyo","Japan","The oldest and largest museum in Japan, housing a vast collection of ancient Japanese art."
+"TeamLab Borderless","art",35.6264,139.7821,3200,"Tokyo","Japan","A world-renowned digital art museum featuring immersive, boundary-less light installations."
+"Akihabara Electric Town","shopping",35.6984,139.7731,0,"Tokyo","Japan","The hub of Japanese electronics, gaming, and anime culture, famous for its bright lights."
+"Tsukiji Outer Market","food",35.6655,139.7707,0,"Tokyo","Japan","A vibrant food market specializing in fresh seafood, sushi, and traditional kitchen tools."
+"Shinjuku Gyoen National Garden","nature",35.6852,139.7101,500,"Tokyo","Japan","A large park blending three distinct styles: French Formal, English Landscape, and Japanese Traditional."
+"Roppongi Hills Mori Tower","relaxation",35.6605,139.7291,1800,"Tokyo","Japan","A skyscraper featuring an open-air rooftop observation deck with panoramic city views."
+"Yoyogi Park","nature",35.6717,139.6949,0,"Tokyo","Japan","A popular spot for street performers and picnics, adjacent to the Meiji Jingu Shrine."
+"Edo-Tokyo Museum","history",35.6962,139.7961,600,"Tokyo","Japan","A museum dedicated to the history of Tokyo during the Edo period with life-size replicas."
+"Rainbow Bridge","relaxation",35.6366,139.7631,0,"Tokyo","Japan","A suspension bridge crossing northern Tokyo Bay, connecting Shibaura Pier and Odaiba."
+"Odaiba Marine Park","nature",35.6285,139.7732,0,"Tokyo","Japan","A man-made island featuring beaches, a replica Statue of Liberty, and futuristic malls."
+"Nezu Museum","art",35.6622,139.7163,1300,"Tokyo","Japan","Houses a private collection of pre-modern Japanese and East Asian art in a stunning modern building."
+"Zojo-ji Temple","culture",35.6574,139.7482,0,"Tokyo","Japan","The head temple of the Jodo sect, located right next to Tokyo Tower."
+"Kinkaku-ji (Golden Pavilion)","history",35.0394,135.7292,500,"Kyoto","Japan","A Zen temple whose top two floors are completely covered in gold leaf."
+"Fushimi Inari-taisha","culture",34.9671,135.7727,0,"Kyoto","Japan","Famous for its thousands of vermilion torii gates that trail up the sacred Mount Inari."
+"Kiyomizu-dera Temple","history",34.9949,135.7850,400,"Kyoto","Japan","A historic temple known for its massive wooden stage that offers views of cherry blossoms."
+"Arashiyama Bamboo Grove","nature",35.0175,135.6748,0,"Kyoto","Japan","A world-famous natural forest where soaring bamboo stalks create a serene, green atmosphere."
+"Gion District","culture",35.0035,135.7752,0,"Kyoto","Japan","Kyoto's famous geisha district, filled with traditional wooden machiya merchant houses."
+"Nijo Castle","history",35.0142,135.7481,820,"Kyoto","Japan","The former residence of the Tokugawa Shogunate, featuring 'nightingale floors' that chirp when walked upon."
+"Ryoan-ji Temple","art",35.0345,135.7182,500,"Kyoto","Japan","The site of Japan's most famous rock garden, consisting of 15 raked stones on white gravel."
+"Ginkaku-ji (Silver Pavilion)","history",35.0268,135.7982,500,"Kyoto","Japan","A Zen temple with a beautiful moss garden and a unique 'sea of silver sand' raked garden."
+"Kyoto Imperial Palace","history",35.0252,135.7621,0,"Kyoto","Japan","The former ruling palace of the Emperor of Japan, set in the spacious Kyoto Gyoen Park."
+"Philosopher's Path","nature",35.0270,135.7960,0,"Kyoto","Japan","A stone path along a canal lined with hundreds of cherry trees, ideal for meditation."
+"Sanjusangen-do Temple","culture",34.9878,135.7717,600,"Kyoto","Japan","A temple famous for its 1,001 life-sized statues of the Thousand Armed Kannon."
+"Tenryu-ji Temple","history",35.0158,135.6736,500,"Kyoto","Japan","The head temple of the Tenryu branch of Rinzai Zen Buddhism, with a 14th-century garden."
+"Kyoto International Manga Museum","art",35.0118,135.7592,900,"Kyoto","Japan","A museum dedicated to the history and culture of manga, featuring a massive library of books."
+"Eikan-do Zenrin-ji","nature",35.0144,135.7956,600,"Kyoto","Japan","Famous for its vibrant autumn colors and the 'Mikaeri Kannon' statue looking over its shoulder."
+"Heian Jingu Shrine","culture",35.0160,135.7820,0,"Kyoto","Japan","A relatively new Shinto shrine built to mark the 1100th anniversary of Kyoto's founding."
+"Nanzen-ji Temple","history",35.0111,135.7877,600,"Kyoto","Japan","One of the most important Zen temples in Japan, featuring an impressive Sanmon gate."
+"Kyoto Tower","relaxation",34.9875,135.7593,800,"Kyoto","Japan","The tallest structure in Kyoto, offering a 360-degree view of the city's temples and hills."
+"Nishiki Market","food",35.0050,135.7649,0,"Kyoto","Japan","Known as 'Kyoto's Kitchen', this narrow shopping street is lined with traditional food stalls."
+"Yasaka Shrine","culture",35.0036,135.7785,0,"Kyoto","Japan","A bustling shrine located at the end of Shijo-dori, famous for the Gion Matsuri festival."
+"To-ji Temple","history",34.9811,135.7476,500,"Kyoto","Japan","Home to Japan's tallest wooden pagoda, a landmark visible from the Shinkansen."
+"Osaka Castle","history",34.6873,135.5262,600,"Osaka","Japan","A magnificent reconstruction of the 16th-century castle, surrounded by a massive park and moat."
+"Dotonbori","food",34.6687,135.5013,0,"Osaka","Japan","The heart of Osaka's food and nightlife, famous for the Glico Running Man sign and giant crab signs."
+"Universal Studios Japan","relaxation",34.6654,135.4323,8600,"Osaka","Japan","A world-class theme park featuring Super Nintendo World and The Wizarding World of Harry Potter."
+"Umeda Sky Building","relaxation",34.7053,135.4906,1500,"Osaka","Japan","A futuristic landmark featuring a 'Floating Garden Observatory' connecting its twin towers."
+"Sumiyoshi Taisha","culture",34.6124,135.4937,0,"Osaka","Japan","One of Japan's oldest shrines, famous for its arched Sorihashi Bridge."
+"Shitenno-ji Temple","history",34.6534,135.5165,300,"Osaka","Japan","The first Buddhist and oldest officially administered temple in Japan, founded in 593."
+"Kaiyukan Aquarium","nature",34.6545,135.4289,2400,"Osaka","Japan","One of the world's largest indoor aquariums, featuring a massive tank with a whale shark."
+"Shinsekai District","culture",34.6525,135.5063,0,"Osaka","Japan","A nostalgic neighborhood modeled after Paris and New York, known for the Tsutenkaku Tower."
+"Tsutenkaku Tower","history",34.6525,135.5063,900,"Osaka","Japan","A symbol of Osaka's reconstruction after WWII, offering views and a Billiken 'good luck' statue."
+"Kuromon Ichiba Market","food",34.6654,135.5070,0,"Osaka","Japan","A lively covered market known as 'Osaka's Kitchen' for its fresh seafood and street food."
+"Tempozan Giant Ferris Wheel","relaxation",34.6562,135.4310,800,"Osaka","Japan","Once the world's tallest ferris wheel, providing views of Osaka Bay and the city skyline."
+"Namba Yasaka Shrine","culture",34.6612,135.4967,0,"Osaka","Japan","Features a unique, massive stage shaped like a lion's head that swallows evil spirits."
+"Amerikamura","shopping",34.6710,135.4985,0,"Osaka","Japan","Osaka's center of youth fashion and creative culture, often compared to Tokyo's Harajuku."
+"Mint Museum","history",34.6953,135.5217,0,"Osaka","Japan","The headquarters of the Japan Mint, famous for its cherry blossom tunnel in spring."
+"Osaka Museum of Housing and Living","history",34.7104,135.5115,600,"Osaka","Japan","A museum containing a life-sized model of a town as it appeared during the Edo Period."
+"Minoo Park","nature",34.8480,135.4740,0,"Osaka","Japan","A forested valley on the outskirts of Osaka, famous for its waterfall and maple leaf tempura."
+"Spa World","relaxation",34.6506,135.5057,1500,"Osaka","Japan","A massive hot spring theme park with baths themed after various countries around the world."
+"Abeno Harukas","relaxation",34.6458,135.5139,1500,"Osaka","Japan","The tallest skyscraper in Japan (until 2023), featuring a luxury hotel and observation deck."
+"National Museum of Art","art",34.6917,135.4919,430,"Osaka","Japan","An underground museum focusing on contemporary art, located on Nakanoshima island."
+"Osaka Science Museum","science",34.6914,135.4914,400,"Osaka","Japan","Features interactive exhibits on space, energy, and chemistry, popular with families."
+"Odori Park","nature",43.0601,141.3508,0,"Sapporo","Japan","A large park in the center of Sapporo that hosts the world-famous Snow Festival."
+"Sapporo Beer Museum","history",43.0716,141.3693,0,"Sapporo","Japan","Japan's only beer museum, detailing the history of brewing in Hokkaido since 1876."
+"Mount Moiwa Ropeway","relaxation",43.0315,141.3330,2100,"Sapporo","Japan","A cable car taking visitors to the summit for a spectacular night view of Sapporo."
+"Clock Tower (Tokeidai)","history",43.0626,141.3533,200,"Sapporo","Japan","The symbol of Sapporo, this American-made clock tower dates back to 1878."
+"Hokkaido Shrine","culture",43.0540,141.3075,0,"Sapporo","Japan","A serene Shinto shrine located in Maruyama Park, dedicated to the soul of Emperor Meiji."
+"Shiroi Koibito Park","food",43.0880,141.2715,600,"Sapporo","Japan","A chocolate-themed park where visitors can see how Hokkaido's famous cookies are made."
+"Sapporo TV Tower","relaxation",43.0611,141.3564,800,"Sapporo","Japan","Located in Odori Park, offering views of the city's unique grid-based layout."
+"Historic Village of Hokkaido","history",43.0485,141.4975,800,"Sapporo","Japan","An open-air museum featuring restored buildings from the frontier days of Hokkaido."
+"Moerenuma Park","art",43.1235,141.4285,0,"Sapporo","Japan","A massive park designed by Isamu Noguchi, featuring a glass pyramid and play sculptures."
+"Susukino District","relaxation",43.0555,141.3535,0,"Sapporo","Japan","Hokkaido's largest entertainment district, famous for its Ramen Yokocho (Ramen Alley)."
+"Maruyama Zoo","nature",43.0519,141.3072,800,"Sapporo","Japan","A popular zoo featuring polar bears and local Hokkaido wildlife near the city center."
+"Hokkaido Museum of Modern Art","art",43.0600,141.3325,510,"Sapporo","Japan","Showcases works by local Hokkaido artists and international glass art."
+"Sapporo Factory","shopping",43.0650,141.3630,0,"Sapporo","Japan","A large shopping and entertainment complex built on the site of Japan's first brewery."
+"Tanukikoji Shopping Arcade","shopping",43.0575,141.3500,0,"Sapporo","Japan","One of the oldest shopping arcades in Hokkaido, spanning seven blocks."
+"Hokkaido University Campus","history",43.0715,141.3415,0,"Sapporo","Japan","Famous for its beautiful poplar and ginkgo avenues, especially during autumn."
+"Jozankei Onsen","relaxation",42.9660,141.1610,0,"Sapporo","Japan","A hot spring town located inside the city limits within the scenic Shikotsu-Toya National Park."
+"Makomanai Takino Cemetery","art",42.9215,141.3645,0,"Sapporo","Japan","Features a 'Hill of the Buddha' designed by Tadao Ando and replicas of Stonehenge."
+"Takino Suzuran Park","nature",42.9110,141.3850,450,"Sapporo","Japan","The only national government park in Hokkaido, offering flower gardens and waterfalls."
+"Sapporo Dome","culture",43.0151,141.4111,1000,"Sapporo","Japan","A futuristic stadium used for baseball and soccer, featuring a hovering turf system."
+"Nakajima Park","nature",43.0460,141.3550,0,"Sapporo","Japan","A city park containing a Japanese garden and the historic Hohei Kan guest house."
+"Ohori Park","nature",33.5859,130.3764,0,"Fukuoka","Japan","A beautiful park with a large central pond modeled after West Lake in China."
+"Fukuoka Tower","relaxation",33.5933,130.3515,800,"Fukuoka","Japan","The tallest seaside tower in Japan, covered in 8,000 half-mirrors."
+"Kushida Shrine","culture",33.5931,130.4106,0,"Fukuoka","Japan","The host of the Hakata Gion Yamakasa festival, displaying a massive parade float."
+"Canal City Hakata","shopping",33.5898,130.4110,0,"Fukuoka","Japan","A large shopping complex with a canal running through it and daily fountain shows."
+"Maizuru Park","history",33.5865,130.3800,0,"Fukuoka","Japan","Built on the ruins of Fukuoka Castle, it is a premier spot for cherry blossom viewing."
+"Marine World Uminonakamichi","nature",33.6645,130.3620,2500,"Fukuoka","Japan","A large aquarium focusing on the diverse marine life found around Kyushu."
+"Momochi Seaside Park","relaxation",33.5950,130.3520,0,"Fukuoka","Japan","A modern waterfront area with artificial beaches, restaurants, and the Fukuoka Tower."
+"Hakata Machiya Folk Museum","history",33.5935,130.4115,200,"Fukuoka","Japan","Details the traditional life and crafts of the Hakata district in Fukuoka."
+"Dazaifu Tenmangu Shrine","culture",33.5215,130.5348,0,"Fukuoka","Japan","A short trip from the city, dedicated to the god of learning and famous for plum trees."
+"Fukuoka Art Museum","art",33.5841,130.3792,200,"Fukuoka","Japan","Located in Ohori Park, housing both pre-modern and contemporary Asian art."
+"Tocho-ji Temple","culture",33.5948,130.4137,0,"Fukuoka","Japan","Home to the 'Great Buddha of Fukuoka', one of the largest wooden seated Buddhas."
+"Shofuku-ji Temple","history",33.5958,130.4138,0,"Fukuoka","Japan","The first Zen temple in Japan, founded in 1195 by the priest Eisai."
+"Rakusuien Garden","nature",33.5875,130.4125,100,"Fukuoka","Japan","A small, peaceful Japanese garden with a tea house located near Sumiyoshi Shrine."
+"Sumiyoshi-jinja Shrine","culture",33.5855,130.4135,0,"Fukuoka","Japan","One of the oldest Shinto shrines in Kyushu, dedicated to the guardian of sailors."
+"Uminonakamichi Seaside Park","nature",33.6610,130.3525,450,"Fukuoka","Japan","A sprawling park on a peninsula with flower gardens, a zoo, and cycling trails."
+"Robosquare","science",33.5925,130.3510,0,"Fukuoka","Japan","A showroom and laboratory where visitors can interact with various types of robots."
+"Yatai Food Stalls","food",33.5900,130.4100,0,"Fukuoka","Japan","Iconic open-air food stalls serving Hakata ramen and other local specialties at night."
+"Kyushu National Museum","history",33.5185,130.5385,700,"Fukuoka","Japan","A massive, architecturally striking museum focusing on the history of Asian exchange."
+"Asian Art Museum","art",33.5945,130.4065,200,"Fukuoka","Japan","The only museum in the world that systematically collects and exhibits modern Asian art."
+"TeamLab Forest Fukuoka","art",33.5910,130.3630,2200,"Fukuoka","Japan","An interactive digital art forest located in the E-ZO Fukuoka entertainment complex."

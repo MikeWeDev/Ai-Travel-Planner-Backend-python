@@ -1,106 +1,79 @@
 import os
 import uvicorn
 from dotenv import load_dotenv
-from fastapi import FastAPI
+from fastapi import FastAPI, Depends, HTTPException
 from typing import List
 from pydantic import BaseModel
-from app.models import TripRequest, TripResponse, Place
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker, Session
 
-# Importing all 3 core engine components
+# Import updated services
 from app.services.data import (
-    load_places, 
+    get_db_places, 
     get_smart_recommendations, 
     apply_budget_constraint, 
     optimize_route
 )
+from app.models import TripRequest, TripResponse, Place
 
-# Load environment variables from .env file
 load_dotenv()
+
+# --- DATABASE SETUP ---
+DATABASE_URL = os.getenv("DATABASE_URL")
+
+# UPDATED ENGINE FOR POOLER SUPPORT
+# We added pool_size and pool_recycle to keep the connection healthy
+engine = create_engine(
+    DATABASE_URL, 
+    pool_pre_ping=True,
+    pool_size=10,        # Keeps 10 connections ready
+    max_overflow=20,     # Allows extra connections if busy
+    pool_recycle=300     # Refreshes connection every 5 minutes
+)
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 app = FastAPI()
 
-class TripRequest(BaseModel):
-    city: str
-    country: str
-    interests: List[str] 
-    budget: float
-    duration: int 
+# Dependency to get DB session
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
 
-# ---------------------------
-# ROOT (Health Check)
-# ---------------------------
+# --- ROUTES ---
+
 @app.get("/")
 def root():
-    return {"status": "Backend Engine is running"}
+    return {"status": "Backend Engine is running on Cloud DB (via Pooler)"}
 
-# ---------------------------
-# GENERATE TRIP (Day 4 & 5 Logic)
-# ---------------------------
 @app.post("/generate")
-def generate_trip(req: TripRequest):
-    """
-    Main AI Pipeline: 
-    1. AI Ranking (TF-IDF) 
-    2. Constraint Optimization (Budget)
-    3. Spatial Optimization (Route/TSP)
-    """
-    
-    # Step 1: Get AI-ranked places using Vector Similarity (Day 4)
-    ranked_df = get_smart_recommendations(req.interests, req.city, req.country)
+def generate_trip(req: TripRequest, db: Session = Depends(get_db)):
+    # 1. Fetch data from DB and Rank (Vector Similarity)
+    ranked_df = get_smart_recommendations(req.interests, req.city, req.country, db)
     
     if ranked_df.empty:
-        return {
-            "city": req.city, 
-            "itinerary": [], 
-            "total_budget_used": 0,
-            "message": "No places found matching your criteria in this location."
-        }
+        return {"city": req.city, "itinerary": [], "message": "No places found."}
 
-    # Step 2: Apply the Budget Constraint - Greedy Algorithm (Day 4)
+    # 2. Budget Logic
     final_selection_list, total_cost = apply_budget_constraint(ranked_df, req.budget)
 
-    if not final_selection_list:
-        return {
-            "city": req.city, 
-            "itinerary": [], 
-            "total_budget_used": 0,
-            "message": "No places found within your budget."
-        }
-
-    # Step 3: Route Optimization - Nearest Neighbor/TSP (Day 5)
+    # 3. Route Optimization
     optimized_itinerary = optimize_route(final_selection_list)
 
-    # Return the full "Smart" response back to the Node.js caller
     return {
         "city": req.city,
         "country": req.country,
         "total_budget_used": total_cost,
-        "itinerary_count": len(optimized_itinerary),
         "itinerary": optimized_itinerary
     }
 
-# ---------------------------
-# DEBUG — get all places
-# ---------------------------
 @app.get("/places", response_model=List[Place])
-def get_all_places():
-    """
-    Utility endpoint to verify your CSV data is loading correctly.
-    """
-    raw_places = load_places()
-    # Convert to Place objects if they come back as dicts
-    places = [Place(**p) if isinstance(p, dict) else p for p in raw_places]
-    print(f"📍 Debug: Loaded {len(places)} places from CSV")
-    return places
+def get_all_places(db: Session = Depends(get_db)):
+    """Fetches all places directly from Supabase"""
+    return get_db_places(db)
 
-# ---------------------------
-# SERVER RUNNER
-# ---------------------------
 if __name__ == "__main__":
-    # Get configuration from .env or use defaults
-    # Use 'PORT' as it is the standard name for deployment platforms like Render/Heroku
     server_port = int(os.getenv("PORT", 8000))
-    server_host = os.getenv("HOST", "0.0.0.0")
-    
-    print(f"🚀 Python Engine starting on {server_host}:{server_port}")
-    uvicorn.run(app, host=server_host, port=server_port)
+    uvicorn.run(app, host="0.0.0.0", port=server_port)
