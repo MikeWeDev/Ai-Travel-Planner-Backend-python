@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from typing import List,Optional
+from typing import List, Optional
 
 class TripRequest(BaseModel):
     city: str
@@ -17,6 +17,15 @@ class Place(BaseModel):
     longitude: float
     entry_fee: float
 
+# --- ADD THIS TO SUPPORT THE TIMELINE STRUCTURE ---
+class DayPlan(BaseModel):
+    day: int
+    title: str
+    activities: List[Place]
+
 class TripResponse(BaseModel):
     city: str
-    places: List[Place]
+    country: str
+    total_budget_used: float
+    # Change "places" to "itinerary" so it matches your route logic
+    itinerary: List[DayPlan]

@@ -56,11 +56,11 @@ def generate_trip(req: TripRequest, db: Session = Depends(get_db)):
     if ranked_df.empty:
         return {"city": req.city, "itinerary": [], "message": "No places found."}
 
-    # 2. Budget Logic
-    final_selection_list, total_cost = apply_budget_constraint(ranked_df, req.budget)
+    # 2. Budget Logic - ADDED 'req.days' HERE
+    final_selection_list, total_cost = apply_budget_constraint(ranked_df, req.budget, req.days)
 
-    # 3. Route Optimization
-    optimized_itinerary = optimize_route(final_selection_list)
+    # 3. Route Optimization - ADDED 'req.days' HERE
+    optimized_itinerary = optimize_route(final_selection_list, req.days)
 
     return {
         "city": req.city,
