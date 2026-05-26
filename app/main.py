@@ -2,7 +2,7 @@ import os
 import uvicorn
 from dotenv import load_dotenv
 from fastapi import FastAPI, Depends, HTTPException
-from typing import List
+from typing import List, Optional
 from pydantic import BaseModel
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, Session
@@ -14,27 +14,23 @@ from app.services.data import (
     apply_budget_constraint, 
     optimize_route
 )
-from app.models import TripRequest, TripResponse, Place
+from app.models import Place
 
 load_dotenv()
 
-# --- DATABASE SETUP ---
 DATABASE_URL = os.getenv("DATABASE_URL")
 
-# UPDATED ENGINE FOR POOLER SUPPORT
-# We added pool_size and pool_recycle to keep the connection healthy
 engine = create_engine(
     DATABASE_URL, 
     pool_pre_ping=True,
-    pool_size=10,        # Keeps 10 connections ready
-    max_overflow=20,     # Allows extra connections if busy
-    pool_recycle=300     # Refreshes connection every 5 minutes
+    pool_size=10,        
+    max_overflow=20,     
+    pool_recycle=300     
 )
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 app = FastAPI()
 
-# Dependency to get DB session
 def get_db():
     db = SessionLocal()
     try:
@@ -42,24 +38,46 @@ def get_db():
     finally:
         db.close()
 
+# --- EXTENDED DESIGN SCHEMAS ---
+class DynamicTripRequest(BaseModel):
+    interests: List[str]
+    city: str
+    country: str
+    budget: float
+    days: int
+    # Automatically extracts memory array passed from Express profile pipeline
+    negative_constraints: Optional[List[str]] = []
+
+class FeedbackSchema(BaseModel):
+    user_id: str
+    title: str
+    itinerary: List[dict]
+    feedback: str
+
 # --- ROUTES ---
 
 @app.get("/")
 def root():
-    return {"status": "Backend Engine is running on Cloud DB (via Pooler)"}
+    return {"status": "Adaptive AI Engine Online"}
 
 @app.post("/generate")
-def generate_trip(req: TripRequest, db: Session = Depends(get_db)):
-    # 1. Fetch data from DB and Rank (Vector Similarity)
-    ranked_df = get_smart_recommendations(req.interests, req.city, req.country, db)
+def generate_trip(req: DynamicTripRequest, db: Session = Depends(get_db)):
+    # 1. Fetch from DB & execute AI-ranking passing user negative constraints history profile
+    ranked_df = get_smart_recommendations(
+        user_interests=req.interests, 
+        city=req.city, 
+        country=req.country, 
+        db=db,
+        negative_constraints=req.negative_constraints
+    )
     
     if ranked_df.empty:
-        return {"city": req.city, "itinerary": [], "message": "No places found."}
+        return {"city": req.city, "itinerary": [], "message": "No places found matching criteria."}
 
-    # 2. Budget Logic - ADDED 'req.days' HERE
+    # 2. Budget Processing
     final_selection_list, total_cost = apply_budget_constraint(ranked_df, req.budget, req.days)
 
-    # 3. Route Optimization - ADDED 'req.days' HERE
+    # 3. Spatial Route Optimization
     optimized_itinerary = optimize_route(final_selection_list, req.days)
 
     return {
@@ -69,9 +87,18 @@ def generate_trip(req: TripRequest, db: Session = Depends(get_db)):
         "itinerary": optimized_itinerary
     }
 
+@app.post("/api/learn/feedback")
+def process_incoming_feedback(telemetry: FeedbackSchema):
+    """
+    Hook endpoint for processing instant metrics or system model fine-tuning records.
+    Can be expanded to run model weights optimization scripts.
+    """
+    print(f"📡 System Ingested Telemetry Feedback from User [{telemetry.user_id}]")
+    print(f"Critique summary: {telemetry.feedback}")
+    return {"status": "synchronized", "feedback_recorded": len(telemetry.feedback)}
+
 @app.get("/places", response_model=List[Place])
 def get_all_places(db: Session = Depends(get_db)):
-    """Fetches all places directly from Supabase"""
     return get_db_places(db)
 
 if __name__ == "__main__":

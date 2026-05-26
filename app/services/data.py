@@ -46,10 +46,14 @@ def load_places(db: Session):
 
 
 # --- TASK 2: THE AI MATCHING ENGINE ---
-def get_smart_recommendations(user_interests: list, city: str, country: str, db: Session):
+def get_smart_recommendations(user_interests: list, city: str, country: str, db: Session, negative_constraints: list = None):
     """
-    Queries the Cloud DB for specific city/country, then ranks via AI.
+    Queries Cloud DB, performs absolute text exclusions for explicit places users dislike,
+    and structures remaining entries via Vector TF-IDF similarity ranks.
     """
+    if negative_constraints is None:
+        negative_constraints = []
+
     query = text("""
         SELECT * FROM locations 
         WHERE city ILIKE :city AND country ILIKE :country
@@ -60,25 +64,55 @@ def get_smart_recommendations(user_interests: list, city: str, country: str, db:
     if filtered_df.empty:
         return filtered_df
 
+    filtered_df['name'] = filtered_df['name'].fillna('')
     filtered_df['description'] = filtered_df['description'].fillna('')
     filtered_df['category'] = filtered_df['category'].fillna('')
 
-    vectorizer = TfidfVectorizer(stop_words='english')
+    # =========================================================================
+    # 🔥 CRITICAL EXTRACTION: ABSOLUTE EXCLUSION PATTERNS (HARD ELIMINATION)
+    # =========================================================================
+    if negative_constraints:
+        indices_to_drop = []
+        for index, row in filtered_df.iterrows():
+            row_text = f"{row['name']} {row['category']} {row['description']}".lower()
+            
+            for constraint in negative_constraints:
+                clean_constraint = constraint.lower().strip()
+                
+                # Check for explicit name matches (e.g., "Yared School of Music")
+                if clean_constraint in row_text or row['name'].lower() in clean_constraint:
+                    indices_to_drop.append(index)
+                    break
+        
+        if indices_to_drop:
+            filtered_df = filtered_df.drop(index=list(set(indices_to_drop))).reset_index(drop=True)
+
+    if filtered_df.empty:
+        return filtered_df
+
+    # --- TF-IDF VECTORS (RUNS CLEANLY ON RETAINED SAFE INFRASTRUCTURE PLACES) ---
     combined_text_data = filtered_df['category'] + " " + filtered_df['description']
+    vectorizer = TfidfVectorizer(stop_words='english')
     
     try:
         content_matrix = vectorizer.fit_transform(combined_text_data)
         user_query = " ".join(user_interests)
         user_vector = vectorizer.transform([user_query])
+        positive_scores = cosine_similarity(user_vector, content_matrix).flatten()
+        
+        filtered_df['ai_score'] = positive_scores
 
-        scores = cosine_similarity(user_vector, content_matrix).flatten()
-        filtered_df['ai_score'] = scores
+        # Apply secondary contextual semantic soft penalties for descriptive text feedback
+        if negative_constraints:
+            negative_corpus = " ".join(negative_constraints)
+            negative_vector = vectorizer.transform([negative_corpus])
+            negative_scores = cosine_similarity(negative_vector, content_matrix).flatten()
+            filtered_df['ai_score'] = filtered_df['ai_score'] - (negative_scores * 0.4)
+
     except ValueError:
         filtered_df['ai_score'] = 0.5
 
     return filtered_df.sort_values(by='ai_score', ascending=False)
-
-
 # --- TASK 3: THE OPTIMIZATION ALGORITHM ---
 def apply_budget_constraint(ranked_df, max_budget: float, days: int):
     itinerary = []
