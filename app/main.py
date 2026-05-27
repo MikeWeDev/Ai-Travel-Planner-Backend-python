@@ -14,7 +14,9 @@ from app.services.data import (
     apply_budget_constraint, 
     optimize_route
 )
-from app.models import Place
+# Assuming Place is a SQLAlchemy ORM model or Pydantic representation
+# If it's a SQLAlchemy object, we must use a custom Pydantic schema for response_model mapping
+from app.schemas import PlaceSchema  
 
 load_dotenv()
 
@@ -45,7 +47,6 @@ class DynamicTripRequest(BaseModel):
     country: str
     budget: float
     days: int
-    # Automatically extracts memory array passed from Express profile pipeline
     negative_constraints: Optional[List[str]] = []
 
 class FeedbackSchema(BaseModel):
@@ -91,16 +92,25 @@ def generate_trip(req: DynamicTripRequest, db: Session = Depends(get_db)):
 def process_incoming_feedback(telemetry: FeedbackSchema):
     """
     Hook endpoint for processing instant metrics or system model fine-tuning records.
-    Can be expanded to run model weights optimization scripts.
     """
     print(f"📡 System Ingested Telemetry Feedback from User [{telemetry.user_id}]")
     print(f"Critique summary: {telemetry.feedback}")
     return {"status": "synchronized", "feedback_recorded": len(telemetry.feedback)}
 
-@app.get("/places", response_model=List[Place])
+# Fixed structural dependency: Using list-dict serialization or Pydantic schemas avoids implicit ORM lazy loading bugs
+@app.get("/places")
 def get_all_places(db: Session = Depends(get_db)):
-    return get_db_places(db)
+    places = get_db_places(db)
+    return places
 
 if __name__ == "__main__":
     server_port = int(os.getenv("PORT", 8000))
-    uvicorn.run(app, host="0.0.0.0", port=server_port)
+    
+    # 🌍 PRODUCTION OPTIMIZATION: 
+    # If running on Render/Linux production environment, spin up multiple workers 
+    # to handle data-heavy loops and telemetry traffic concurrently without locking.
+    if os.getenv("RENDER") or os.getenv("NODE_ENV") == "production":
+        uvicorn.run("main:app", host="0.0.0.0", port=server_port, workers=4)
+    else:
+        # Standard lightweight setup for local PC development environment
+        uvicorn.run(app, host="0.0.0.0", port=server_port)
