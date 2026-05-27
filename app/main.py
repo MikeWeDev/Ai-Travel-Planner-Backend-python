@@ -14,9 +14,7 @@ from app.services.data import (
     apply_budget_constraint, 
     optimize_route
 )
-# Assuming Place is a SQLAlchemy ORM model or Pydantic representation
-# If it's a SQLAlchemy object, we must use a custom Pydantic schema for response_model mapping
-from app.schemas import PlaceSchema  
+from app.models import Place
 
 load_dotenv()
 
@@ -97,20 +95,18 @@ def process_incoming_feedback(telemetry: FeedbackSchema):
     print(f"Critique summary: {telemetry.feedback}")
     return {"status": "synchronized", "feedback_recorded": len(telemetry.feedback)}
 
-# Fixed structural dependency: Using list-dict serialization or Pydantic schemas avoids implicit ORM lazy loading bugs
+# ✅ FIXED: Removed response_model to prevent dependency on non-existent app.schemas module
 @app.get("/places")
 def get_all_places(db: Session = Depends(get_db)):
-    places = get_db_places(db)
-    return places
+    return get_db_places(db)
 
 if __name__ == "__main__":
     server_port = int(os.getenv("PORT", 8000))
     
     # 🌍 PRODUCTION OPTIMIZATION: 
-    # If running on Render/Linux production environment, spin up multiple workers 
-    # to handle data-heavy loops and telemetry traffic concurrently without locking.
+    # Use multi-worker cluster on Render/Production to avoid thread-locking during heavy generation jobs
     if os.getenv("RENDER") or os.getenv("NODE_ENV") == "production":
-        uvicorn.run("main:app", host="0.0.0.0", port=server_port, workers=4)
+        uvicorn.run("app.main:app", host="0.0.0.0", port=server_port, workers=4)
     else:
-        # Standard lightweight setup for local PC development environment
+        # Standard lightweight single-process reload configuration for local development PC
         uvicorn.run(app, host="0.0.0.0", port=server_port)
