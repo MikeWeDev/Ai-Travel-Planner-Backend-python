@@ -9,13 +9,13 @@ def calculate_match_score(place: Place, interests: List[str]) -> float:
     if not interests:
         return 0.5  # neutral relevance
 
-    place_category = place.category.lower()
+    place_category = place.category.lower()interests
     interests = [i.lower() for i in interests]
 
     if place_category in interests:
         return 1.0
 
-    # soft matching (optional, expandable later)
+    # soft matching 
     related_categories = {
         "history": ["museum", "historical"],
         "culture": ["festival", "community"],

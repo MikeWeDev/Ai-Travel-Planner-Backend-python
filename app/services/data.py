@@ -113,6 +113,7 @@ def get_smart_recommendations(user_interests: list, city: str, country: str, db:
         filtered_df['ai_score'] = 0.5
 
     return filtered_df.sort_values(by='ai_score', ascending=False)
+
 # --- TASK 3: THE OPTIMIZATION ALGORITHM ---
 def apply_budget_constraint(ranked_df, max_budget: float, days: int):
     itinerary = []
@@ -124,7 +125,9 @@ def apply_budget_constraint(ranked_df, max_budget: float, days: int):
             price = float(row['entry_fee']) if row['entry_fee'] else 0.0
         except (ValueError, TypeError):
             price = 0.0
-        
+
+        //buget optimaization
+
         if current_cost + price <= max_budget:
             place_dict = row.to_dict()
             # Clean up NaN for JSON
@@ -157,6 +160,8 @@ def optimize_route(selected_places: list, days: int):
     while temp_places:
         closest_index = 0
         min_distance = float('inf')
+        
+        //route optimization
         for i, next_place in enumerate(temp_places):
             dist = geodesic(
                 (current_place['latitude'], current_place['longitude']),
